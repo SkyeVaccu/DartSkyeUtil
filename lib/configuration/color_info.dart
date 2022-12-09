@@ -1,6 +1,37 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:skye_utils/util/color/color_type.dart';
 
-class RandomColorList {
+/// ColorInfo which include all color we will use
+class ColorInfo{
+  ///the adapt color map ,every one should include the light color and dark color
+  static var adaptColorMap = {
+    AdaptColorType.ThemeColor: {
+      ColorEnvironment.Light: Color.fromARGB(255, 98, 140, 182),
+      ColorEnvironment.Dark: Color.fromARGB(255, 88, 132, 177),
+    },
+    AdaptColorType.BackgroundColor: {
+      ColorEnvironment.Light: Colors.white,
+      ColorEnvironment.Dark: Color.fromARGB(255, 52, 52, 52),
+    },
+    AdaptColorType.ForegroundColor: {
+      ColorEnvironment.Light: Colors.black54,
+      ColorEnvironment.Dark: Colors.white,
+    },
+    AdaptColorType.FirstTextColor: {
+      ColorEnvironment.Light: Colors.black45,
+      ColorEnvironment.Dark: Color.fromARGB(180, 255, 255, 255),
+    },
+    AdaptColorType.SecondTextColor: {
+      ColorEnvironment.Light: Colors.black45,
+      ColorEnvironment.Dark: Color.fromARGB(180, 255, 255, 255),
+    },
+    AdaptColorType.ForegroundTextColor: {
+      ColorEnvironment.Light: Colors.white,
+      ColorEnvironment.Dark: Colors.black45,
+    },
+  };
+
+  ///the random color list which will be used when we need to get the random color
   static var randomColorList = [
     Color.fromARGB(255, 85, 85, 85),
     Color.fromARGB(255, 68, 68, 68),

@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/util/color/adapt_color_type.dart';
-import 'package:skye_utils/util/color/random_color_list.dart';
+import 'package:skye_utils/configuration/color_info.dart';
+import 'package:skye_utils/util/color/color_type.dart';
 import 'package:skye_utils/util/number_util.dart';
 
 ///the util is used to get the correct color
 class ColorUtil {
-  ///get the util single instance
-  ///@return : the single instance
-  static ColorUtil _getInstance() {
-    return new ColorUtil();
-  }
 
   ///get the adapt in the different theme mode
   ///you can reverse the color which is set
@@ -18,10 +13,8 @@ class ColorUtil {
   ///@param reverse : check the color in the another environment
   ///@return : the result Color
   static Color getAdaptColor(AdaptColorType adaptColorType, {bool reverse = false}) {
-    //the color map
-    var colorMap = _getInstance().adaptColorMap;
     //get the corresponding color map
-    var adaptColor = colorMap[adaptColorType];
+    var adaptColor = ColorInfo.adaptColorMap[adaptColorType];
     //return the true color
     return Get.isDarkMode ^ reverse
         ? adaptColor![ColorEnvironment.Dark]!
@@ -32,19 +25,18 @@ class ColorUtil {
   ///@param isDark : whether it's dark
   ///@return : the theme data
   static ThemeData getLightThemeData({bool isDark = false}) {
-    var colorMap = _getInstance().adaptColorMap;
     if (!isDark) {
       return ThemeData(
         brightness: Brightness.light,
         primarySwatch: ColorUtil.createMaterialColor(
-          colorMap[AdaptColorType.ThemeColor]![ColorEnvironment.Light]!,
+          ColorInfo.adaptColorMap[AdaptColorType.ThemeColor]![ColorEnvironment.Light]!,
         ),
       );
     } else {
       return ThemeData(
         brightness: Brightness.dark,
         primarySwatch: ColorUtil.createMaterialColor(
-            colorMap[AdaptColorType.ThemeColor]![ColorEnvironment.Dark]!),
+            ColorInfo.adaptColorMap[AdaptColorType.ThemeColor]![ColorEnvironment.Dark]!),
       );
     }
   }
@@ -53,7 +45,7 @@ class ColorUtil {
   /// @return : the result color
   static Color getRandomColor() {
     //get the deep color list
-    var deepColorList = RandomColorList.randomColorList;
+    var deepColorList = ColorInfo.randomColorList;
     //return the random deep color
     return deepColorList[NumberUtil.createRandomNumber(ceil: deepColorList.length)];
   }
@@ -80,32 +72,4 @@ class ColorUtil {
     });
     return MaterialColor(color.value, swatch);
   }
-
-  ///the adapt color map ,every one should include the light color and dark color
-  var adaptColorMap = {
-    AdaptColorType.ThemeColor: {
-      ColorEnvironment.Light: Color.fromARGB(255, 98, 140, 182),
-      ColorEnvironment.Dark: Color.fromARGB(255, 88, 132, 177),
-    },
-    AdaptColorType.BackgroundColor: {
-      ColorEnvironment.Light: Colors.white,
-      ColorEnvironment.Dark: Color.fromARGB(255, 52, 52, 52),
-    },
-    AdaptColorType.ForegroundColor: {
-      ColorEnvironment.Light: Colors.black54,
-      ColorEnvironment.Dark: Colors.white,
-    },
-    AdaptColorType.FirstTextColor: {
-      ColorEnvironment.Light: Colors.black45,
-      ColorEnvironment.Dark: Color.fromARGB(180, 255, 255, 255),
-    },
-    AdaptColorType.SecondTextColor: {
-      ColorEnvironment.Light: Colors.black45,
-      ColorEnvironment.Dark: Color.fromARGB(180, 255, 255, 255),
-    },
-    AdaptColorType.ForegroundTextColor: {
-      ColorEnvironment.Light: Colors.white,
-      ColorEnvironment.Dark: Colors.black45,
-    },
-  };
 }

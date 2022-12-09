@@ -1,4 +1,6 @@
-import 'package:skye_utils/util/file/file_util.dart';
+import 'dart:io';
+
+import 'package:path_provider/path_provider.dart';
 
 ///the directory type
 enum DirectoryType {
@@ -37,15 +39,35 @@ enum DirectoryType {
 extension DirectoryTypeExtension on DirectoryType {
   //get the directory
   Future<dynamic> get info => [
-        FileUtil.applicationCacheDirectory,
-        FileUtil.applicationFileDirectory,
-        FileUtil.applicationDocumentsDirectory,
-        FileUtil.externalStorageCacheDirectory,
-        FileUtil.externalStorageFileDirectory,
-        FileUtil.externalStorageMusicDirectory,
-        FileUtil.externalStoragePictureDirectory,
-        FileUtil.externalStorageMovieDirectory,
-        FileUtil.externalStorageDownloadDirectory,
-        FileUtil.externalStorageDocumentDirectory,
+        _DirectoryInfo.applicationCacheDirectory,
+        _DirectoryInfo.applicationFileDirectory,
+        _DirectoryInfo.applicationDocumentsDirectory,
+        _DirectoryInfo.externalStorageCacheDirectory,
+        _DirectoryInfo.externalStorageFileDirectory,
+        _DirectoryInfo.externalStorageMusicDirectory,
+        _DirectoryInfo.externalStoragePictureDirectory,
+        _DirectoryInfo.externalStorageMovieDirectory,
+        _DirectoryInfo.externalStorageDownloadDirectory,
+        _DirectoryInfo.externalStorageDocumentDirectory,
       ][index];
+}
+
+/// the directory info
+class _DirectoryInfo{
+  static final Future<Directory> applicationCacheDirectory = getTemporaryDirectory();
+  static final Future<Directory> applicationFileDirectory = getApplicationSupportDirectory();
+  static final Future<Directory> applicationDocumentsDirectory = getApplicationDocumentsDirectory();
+  static final Future<List<Directory>?> externalStorageCacheDirectory =
+  getExternalCacheDirectories();
+  static final Future<Directory?> externalStorageFileDirectory = getExternalStorageDirectory();
+  static final Future<List<Directory>?> externalStorageMusicDirectory =
+  getExternalStorageDirectories(type: StorageDirectory.music);
+  static final Future<List<Directory>?> externalStoragePictureDirectory =
+  getExternalStorageDirectories(type: StorageDirectory.pictures);
+  static final Future<List<Directory>?> externalStorageMovieDirectory =
+  getExternalStorageDirectories(type: StorageDirectory.movies);
+  static final Future<List<Directory>?> externalStorageDownloadDirectory =
+  getExternalStorageDirectories(type: StorageDirectory.downloads);
+  static final Future<List<Directory>?> externalStorageDocumentDirectory =
+  getExternalStorageDirectories(type: StorageDirectory.documents);
 }

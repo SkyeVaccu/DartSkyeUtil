@@ -9,23 +9,6 @@ import 'package:skye_utils/util/serialize/serialize_util.dart';
 
 ///it's used to operate the file
 class FileUtil {
-  static final Future<Directory> applicationCacheDirectory = getTemporaryDirectory();
-  static final Future<Directory> applicationFileDirectory = getApplicationSupportDirectory();
-  static final Future<Directory> applicationDocumentsDirectory = getApplicationDocumentsDirectory();
-  static final Future<List<Directory>?> externalStorageCacheDirectory =
-      getExternalCacheDirectories();
-  static final Future<Directory?> externalStorageFileDirectory = getExternalStorageDirectory();
-  static final Future<List<Directory>?> externalStorageMusicDirectory =
-      getExternalStorageDirectories(type: StorageDirectory.music);
-  static final Future<List<Directory>?> externalStoragePictureDirectory =
-      getExternalStorageDirectories(type: StorageDirectory.pictures);
-  static final Future<List<Directory>?> externalStorageMovieDirectory =
-      getExternalStorageDirectories(type: StorageDirectory.movies);
-  static final Future<List<Directory>?> externalStorageDownloadDirectory =
-      getExternalStorageDirectories(type: StorageDirectory.downloads);
-  static final Future<List<Directory>?> externalStorageDocumentDirectory =
-      getExternalStorageDirectories(type: StorageDirectory.documents);
-
   ///create a operator
   ///@param fileName : the name of the file
   ///@param directoryType : the file storage path
