@@ -1,59 +1,38 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:skye_utils/util/object_util.dart';
 
+/// it's the extension of the widget
 extension WidgetExtension on Widget {
   ///handle the situation when the state is null
+  ///@param state : judge state
+  ///@param handleDefaultValue : whether it need to handle the default value
+  ///@param width : the blank sized box width
+  ///@param height : the blank sized box height
+  ///@return : the result widget
   Widget handleStateNull(
     dynamic state, {
-    bool handleZero = false,
+    bool handleDefaultValue = false,
     double? width,
     double? height,
   }) {
-    SizedBox sizedBox = SizedBox();
+    late SizedBox sizedBox;
     //if the user set the width and the height ,we will use it
     if (width != null && height != null) {
-      sizedBox = SizedBox(
+      sizedBox = new SizedBox(
         width: width,
         height: height,
       );
+    } else {
+      sizedBox = new SizedBox();
     }
+    //handle the state
     if (state == null) {
       return sizedBox;
-    } else if (state is bool) {
-      if (!state) {
-        return sizedBox;
-      }
-    } else if (handleZero) {
-      if ((state as int) == 0) {
-        return sizedBox;
-      }
+    } else if (state is bool && !state) {
+      return sizedBox;
+    } else if (handleDefaultValue && ObjectUtil.isDefaultValue(state)) {
+      return sizedBox;
     }
     return this;
-  }
-
-  ///convert the widget to a Gauss background widget
-  Widget convertToGaussBlurWidget() {
-    return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-      child: this,
-    );
-  }
-
-  ///make the wight float in the center of the stack
-  ///the default layout size is the vertical margin and the horizontal margin both are 30
-  Widget toFloatInCenter({
-    bool vertical = true,
-    bool horizontal = true,
-    double verticalMargin = 30,
-    double horizontalMargin = 30,
-  }) {
-    return Positioned(
-      top: vertical ? verticalMargin : null,
-      bottom: vertical ? verticalMargin : null,
-      left: horizontal ? horizontalMargin : null,
-      right: horizontal ? horizontalMargin : null,
-      child: this,
-    );
   }
 }

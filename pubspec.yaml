@@ -18,6 +18,8 @@ dependencies:
   date_format: 2.0.7
   path_provider: 2.0.4
   logger: 1.1.0
+  event_bus: 2.0.0
+  sqflite: 2.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

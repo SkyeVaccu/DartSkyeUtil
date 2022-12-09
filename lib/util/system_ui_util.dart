@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
@@ -6,6 +5,13 @@ import 'package:get/get.dart';
 
 ///it's used to control the application UI layer
 class SystemUiUtil {
+  /// judge whether the orientation
+  /// it just can be used to adapt the simple page
+  /// @param context : the context object
+  /// @return : whether it's portrait
+  static bool isPortrait(BuildContext context) =>
+      MediaQuery.of(context).orientation == Orientation.portrait;
+
   ///set the screen direction
   ///@param screenDirection : the target screen direction
   static void setScreenDirection(ScreenDirection screenDirection) {
@@ -34,6 +40,17 @@ class SystemUiUtil {
     }
   }
 
+  ///make status bar be transparent
+  static void makeStatusBarTransparent() {
+    //set the status bar color and the brightness
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.light,
+      ),
+    );
+  }
+
   ///close the soft keyboard, its truth is make the input lose the focus node
   static void closeSoftKeyboard() {
     //FocusManager is used to manage the focus node
@@ -57,9 +74,8 @@ class SystemUiUtil {
     }
     //if the state is false, we will show the toast
     else if (state is bool && !state) {
-        SmartDialog.showToast(errorMsg);
-    }
-    else if (successMsg != null) {
+      SmartDialog.showToast(errorMsg);
+    } else if (successMsg != null) {
       SmartDialog.showToast(successMsg);
     }
   }

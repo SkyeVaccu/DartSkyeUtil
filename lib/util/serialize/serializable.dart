@@ -1,4 +1,3 @@
-
 ///the interface showed serialize power
 ///if a class implements it , it should can be serialize or deserialize withe the map
 abstract class Serializable {
@@ -31,6 +30,23 @@ abstract class Serializable {
         return false;
       }
     }
+    return true;
+  }
+}
+
+///this is the empty implements of the Serializable
+///it's used in the api which need a Serializable object to deserialize
+class EmptySerializable extends Serializable {
+  @override
+  fromJson(Map<String, dynamic> json) {}
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
+
+  @override
+  bool mapPair(Map<String, dynamic> json) {
     return true;
   }
 }

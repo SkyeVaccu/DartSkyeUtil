@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/configuration/color_info.dart';
+import 'package:skye_utils/ui_info/color_info.dart';
 import 'package:skye_utils/util/color/color_type.dart';
 import 'package:skye_utils/util/number_util.dart';
 
 ///the util is used to get the correct color
 class ColorUtil {
-
   ///get the adapt in the different theme mode
   ///you can reverse the color which is set
   ///@param adaptColorType : the adapted color type
