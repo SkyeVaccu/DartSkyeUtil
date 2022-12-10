@@ -29,10 +29,12 @@ class FlutterScreenUtilConfiguration {
       currentSize = isPortrait ? Size(1080, 1920) : Size(1920, 1080);
     }
     ScreenUtil.init(
-      context,
-      designSize: currentSize!, // 设计图尺寸
-      splitScreenMode: true,
-      minTextAdapt: true,
-    ); // 屏幕方向
+        BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width, //屏幕宽度
+          maxHeight: MediaQuery.of(context).size.height, //屏幕高度
+        ),
+        designSize: currentSize!, // 设计图尺寸
+        orientation: orientation,
+        context: context); // 屏幕方向
   }
 }
