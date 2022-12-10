@@ -1,6 +1,6 @@
 # skye_utils
 
-A new Flutter Utils package of use Util
+A new Flutter Utils package of use Util to help you to construct the flutter fast
 
 ## Getting Started
 

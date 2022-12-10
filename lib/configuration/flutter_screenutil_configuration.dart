@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class FlutterScreenUtilConfiguration {
   ///reset the init Screen Size
   ///@param context : the root context
-  void initScreenSize(BuildContext context) {
+  static void initScreenSize(BuildContext context) {
     //get the orientation of the device
     var orientation = MediaQuery.of(context).orientation;
     //get the width

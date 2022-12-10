@@ -41,7 +41,12 @@ class ObjectUtil {
     if (objList.isEmpty) {
       return true;
     } else {
-      return !isAllEmpty(objList);
+      for (var value in objList) {
+        if (isEmpty(value)) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 

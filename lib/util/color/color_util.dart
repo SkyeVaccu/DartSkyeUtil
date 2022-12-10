@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/ui_info/color_info.dart';
+import 'package:skye_utils/standard/color_info.dart';
 import 'package:skye_utils/util/color/color_type.dart';
 import 'package:skye_utils/util/number_util.dart';
 
@@ -23,7 +23,7 @@ class ColorUtil {
   ///the theme data which is used in the light mode
   ///@param isDark : whether it's dark
   ///@return : the theme data
-  static ThemeData getLightThemeData({bool isDark = false}) {
+  static ThemeData getThemeData({bool isDark = false}) {
     if (!isDark) {
       return ThemeData(
         brightness: Brightness.light,

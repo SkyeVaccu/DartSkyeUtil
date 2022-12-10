@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:skye_utils/util/http/http_decoder.dart';
 import 'package:skye_utils/util/isolate_util.dart';
 import 'package:skye_utils/util/logger_util.dart';
 import 'package:skye_utils/util/object_util.dart';
@@ -8,7 +9,7 @@ import 'package:skye_utils/util/serialize/serializable.dart';
 import 'package:skye_utils/util/serialize/serialize_util.dart';
 
 /// it's the decoder which is used to decode the response json
-class HttpDecoder {
+class AsyncDecoder implements HttpDecoder {
   /// decode the response data to the dynamic
   /// responseStr is the raw string
   /// it won't parse the data to the PageData, if you want to get the PageData object, you should set the parameter type
@@ -54,14 +55,17 @@ class HttpDecoder {
   ///@param response : the response json data
   ///@param modelObj : the model Object to be referred
   ///@return : the object converted
-  static Future<E> asyncDecode<E, F extends Serializable>(String response, {F? modelObj}) async {
+  @override
+  Future<E> decode<E, F extends Serializable>(String response, {F? modelObj}) async {
     //we don't need to convert it the target type
     if (modelObj == null) {
-      return await IsolateUtil.builder(HttpDecoder._decodeRawResponse).setParameter(response).run();
+      return await IsolateUtil.builder(AsyncDecoder._decodeRawResponse)
+          .setParameter(response)
+          .run();
     }
     //we need to convert it the target type
     else {
-      return await IsolateUtil.builder(HttpDecoder._decodeRawResponse)
+      return await IsolateUtil.builder(AsyncDecoder._decodeRawResponse)
           .setParameter(response)
           .setParameter(modelObj)
           .run();

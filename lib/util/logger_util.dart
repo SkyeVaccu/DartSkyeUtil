@@ -13,7 +13,7 @@ class Log {
   ///@param authorName : the developer name
   ///@param stackMethodCount : the stack method count which will be shown in the console
   ///@return : the logger printer
-  static Logger getInstance({String authorName = "Skye", int stackMethodCount = 1}) {
+  static Logger getInstance({String authorName = "Skye", int stackMethodCount = 0}) {
     return _loggerMap[authorName] ??=
         Logger(printer: new PrettyPrinter(methodCount: stackMethodCount));
   }

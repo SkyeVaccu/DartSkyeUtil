@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:get/get_connect/http/src/request/request.dart';
-import 'package:skye_utils/store/http/configuration/http_configuration.dart';
-import 'package:skye_utils/store/http/interceptor/request_interceptor.dart';
+import 'package:skye_utils/configuration/http_configuration.dart';
+import 'package:skye_utils/util/http/request_interceptor.dart';
 
 ///it's the request interceptor ,you can define the handler to handle the token before sending the request
 class TokenInterceptor extends RequestInterceptor {

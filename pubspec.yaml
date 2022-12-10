@@ -29,7 +29,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
+  uses-material-design: true
+  assets:
+    - resource/image/
+    - resource/data/
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

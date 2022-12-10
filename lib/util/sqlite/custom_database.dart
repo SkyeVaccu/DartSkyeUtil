@@ -1,16 +1,31 @@
 import 'package:flutter/widgets.dart';
-import 'package:skye_utils/store/sqlite/configuration/sqlite_configuration.dart';
+import 'package:skye_utils/util/logger_util.dart';
 import 'package:skye_utils/util/object_util.dart';
 import 'package:skye_utils/util/serialize/serializable.dart';
 import 'package:skye_utils/util/serialize/serialize_util.dart';
+import 'package:skye_utils/util/sqlite/database_table.dart';
+import 'package:skye_utils/util/sqlite/sqlite_data_type.dart';
 import 'package:sqflite/sqflite.dart' as sqlite;
 import 'package:sqflite/sqlite_api.dart';
 import 'package:skye_utils/extension/string_extension.dart';
 
 ///the custom database
 class CustomDatabase {
-  //the database singleton instance
-  static Database? _database;
+  //the data base name
+  String databaseName;
+  //the identity sign which assign the owner like the userId as the foreign key in the normal table
+  String identitySign;
+  //all database tables in the database
+  List<DatabaseTable> databaseTableList;
+  //the true database object
+  Database? _database;
+
+  ///the builder constructor
+  CustomDatabase.builder(
+    this.databaseName,
+    this.identitySign,
+    this.databaseTableList,
+  ); //the database singleton instance
 
   ///init the database
   void init() async {
@@ -21,12 +36,45 @@ class CustomDatabase {
         // Set the path to the database. Note: Using the `join` function from the
         // `path` package is best practice to ensure the path is correctly
         // constructed for each platform.
-        (await sqlite.getDatabasesPath()).join(SqliteConfiguration.DataBaseName + ".db"),
+        (await sqlite.getDatabasesPath()).join(databaseName + ".db"),
         onCreate: (Database db, int version) {
-      SqliteConfiguration.createTableSQLList.forEach((createSQL) {
-        db.execute(createSQL);
+      databaseTableList.forEach((databaseTable) {
+        //get the create table sql
+        String createTableSQL = _getCreateTableSQL(databaseTable);
+        //execute the sql
+        db.execute(createTableSQL);
       });
     });
+  }
+
+  ///get the sql to create the table
+  ///@param databaseTable : database table object
+  ///@return : create table SQL
+  String _getCreateTableSQL(DatabaseTable databaseTable) {
+    //check the primary key column whether it's exist
+    if (databaseTable.dataColumn.containsKey(databaseTable.primaryColumn)) {
+      Log.e("primary key column don't exist");
+      throw "primary key column don't exist";
+    }
+    //concat the data to the sql
+    else {
+      String createTableSQL = "CREATE TABLE " + databaseTable.tableName + "( ";
+      int cnt = 0;
+      for (String columnName in databaseTable.dataColumn.keys) {
+        if (columnName == databaseTable.primaryColumn) {
+          createTableSQL +=
+              (columnName + " " + databaseTable.dataColumn[columnName]!.info + " PRIMARY KEY");
+        } else {
+          createTableSQL += (columnName + " " + databaseTable.dataColumn[columnName]!.info);
+        }
+        if (cnt != (databaseTable.dataColumn.length - 1)) {
+          createTableSQL += ",";
+        }
+        cnt++;
+      }
+      createTableSQL += ")";
+      return createTableSQL;
+    }
   }
 
   ///insert the target obj
@@ -34,7 +82,7 @@ class CustomDatabase {
   ///@param obj : the insert object
   ///@param conflictAlgorithm : apply algorithm when happen the conflict
   ///@return : the influence rows
-  static Future<int> insert<E extends Serializable>({
+  Future<int> insert<E extends Serializable>({
     required String tableName,
     required E obj,
     ConflictAlgorithm? conflictAlgorithm,
@@ -48,7 +96,7 @@ class CustomDatabase {
   ///@param id : the target object id
   ///@param targetObj : target object type
   ///@return : the result object
-  static Future<E> findOneById<E extends Serializable>({
+  Future<E> findOneById<E extends Serializable>({
     required String tableName,
     required String id,
     required E targetObj,
@@ -63,7 +111,7 @@ class CustomDatabase {
   ///@param ownerId : the row information owner id
   ///@param targetObj : target object type
   ///@return : the all result object list
-  static Future<List<E>> findAll<E extends Serializable>({
+  Future<List<E>> findAll<E extends Serializable>({
     required String tableName,
     String? ownerId,
     required E targetObj,
@@ -73,9 +121,7 @@ class CustomDatabase {
       return SerializeUtil.asCustomized(result, targetObj);
     } else {
       List<Map<String, dynamic>> result = await _database!.query(tableName,
-          columns: [SqliteConfiguration.IdentitySign],
-          where: SqliteConfiguration.IdentitySign + "=?",
-          whereArgs: [ownerId]);
+          columns: [identitySign], where: identitySign + "=?", whereArgs: [ownerId]);
       return SerializeUtil.asCustomized(result, targetObj);
     }
   }
@@ -85,7 +131,7 @@ class CustomDatabase {
   ///@param id : the primary key id
   ///@param targetObj : target object type
   ///@return : the influence rows
-  static Future<int> updateOneById<E extends Serializable>({
+  Future<int> updateOneById<E extends Serializable>({
     required String tableName,
     required String id,
     required E targetObj,
@@ -97,7 +143,7 @@ class CustomDatabase {
   ///@param tableName : the target table
   ///@param id : the primary key id
   ///@return : whether the row exist
-  static Future<bool> isExistById<E extends Serializable>({
+  Future<bool> isExistById<E extends Serializable>({
     required String tableName,
     required String id,
   }) async {
@@ -110,7 +156,7 @@ class CustomDatabase {
   ///@param tableName : the target table
   ///@param id : the primary key id
   ///@return : the influence rows
-  static Future<int> deleteOneById<E extends Serializable>({
+  Future<int> deleteOneById<E extends Serializable>({
     required String tableName,
     required String id,
   }) {
@@ -121,7 +167,7 @@ class CustomDatabase {
   ///@param sql : target sql
   ///@param argument : which will be filled into the sql
   ///@return : the result obj list
-  static Future<List<Map<String, dynamic>>> rawQuery({
+  Future<List<Map<String, dynamic>>> rawQuery({
     required String sql,
     List<Object?>? arguments,
   }) {
@@ -132,7 +178,7 @@ class CustomDatabase {
   ///@param sql : target sql
   ///@param argument : which will be filled into the sql
   ///@return : the influence rows
-  static Future<int> rawUpdate({
+  Future<int> rawUpdate({
     required String sql,
     List<Object?>? arguments,
   }) {
@@ -143,7 +189,7 @@ class CustomDatabase {
   ///@param sql : target sql
   ///@param argument : which will be filled into the sql
   ///@return : the influence rows
-  static Future<int> rawInsert({
+  Future<int> rawInsert({
     required String sql,
     List<Object?>? arguments,
   }) {
@@ -154,7 +200,7 @@ class CustomDatabase {
   ///@param sql : target sql
   ///@param argument : which will be filled into the sql
   ///@return : the influence rows
-  static Future<int> rawDelete({
+  Future<int> rawDelete({
     required String sql,
     List<Object?>? arguments,
   }) {

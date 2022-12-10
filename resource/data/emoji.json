@@ -1,0 +1,932 @@
+[
+  {
+    "name": "grinning",
+    "keywords": [
+      "face",
+      "smile",
+      "happy",
+      "joy",
+      ":D",
+      "grin"
+    ],
+    "char": "😀",
+    "category": "people"
+  },
+  {
+    "name": "grin",
+    "keywords": [
+      "face",
+      "happy",
+      "smile",
+      "joy",
+      "kawaii"
+    ],
+    "char": "😁",
+    "category": "people"
+  },
+  {
+    "name": "smiley",
+    "keywords": [
+      "face",
+      "happy",
+      "joy",
+      "haha",
+      ":D",
+      ":)",
+      "smile",
+      "funny"
+    ],
+    "char": "😃",
+    "category": "people"
+  },
+  {
+    "name": "smile",
+    "keywords": [
+      "face",
+      "happy",
+      "joy",
+      "funny",
+      "haha",
+      "laugh",
+      "like",
+      ":D",
+      ":)"
+    ],
+    "char": "😄",
+    "category": "people"
+  },
+  {
+    "name": "sweat_smile",
+    "keywords": [
+      "face",
+      "hot",
+      "happy",
+      "laugh",
+      "sweat",
+      "smile",
+      "relief"
+    ],
+    "char": "😅",
+    "category": "people"
+  },
+  {
+    "name": "laughing",
+    "keywords": [
+      "happy",
+      "joy",
+      "lol",
+      "satisfied",
+      "haha",
+      "face",
+      "glad",
+      "XD",
+      "laugh"
+    ],
+    "char": "😆",
+    "category": "people"
+  },
+  {
+    "name": "innocent",
+    "keywords": [
+      "face",
+      "angel",
+      "heaven",
+      "halo"
+    ],
+    "char": "😇",
+    "category": "people"
+  },
+  {
+    "name": "wink",
+    "keywords": [
+      "face",
+      "happy",
+      "mischievous",
+      "secret",
+      ";)",
+      "smile",
+      "eye"
+    ],
+    "char": "😉",
+    "category": "people"
+  },
+  {
+    "name": "blush",
+    "keywords": [
+      "face",
+      "smile",
+      "happy",
+      "flushed",
+      "crush",
+      "embarrassed",
+      "shy",
+      "joy"
+    ],
+    "char": "😊",
+    "category": "people"
+  },
+  {
+    "name": "slightly_smiling_face",
+    "keywords": [
+      "face",
+      "smile"
+    ],
+    "char": "🙂",
+    "category": "people"
+  },
+  {
+    "name": "yum",
+    "keywords": [
+      "happy",
+      "joy",
+      "tongue",
+      "smile",
+      "face",
+      "silly",
+      "yummy",
+      "nom",
+      "delicious",
+      "savouring"
+    ],
+    "char": "😋",
+    "category": "people"
+  },
+  {
+    "name": "heart_eyes",
+    "keywords": [
+      "face",
+      "love",
+      "like",
+      "affection",
+      "valentines",
+      "infatuation",
+      "crush",
+      "heart"
+    ],
+    "char": "😍",
+    "category": "people"
+  },
+  {
+    "name": "kissing_heart",
+    "keywords": [
+      "face",
+      "love",
+      "like",
+      "affection",
+      "valentines",
+      "infatuation",
+      "kiss"
+    ],
+    "char": "😘",
+    "category": "people"
+  },
+  {
+    "name": "kissing",
+    "keywords": [
+      "love",
+      "like",
+      "face",
+      "3",
+      "valentines",
+      "infatuation",
+      "kiss"
+    ],
+    "char": "😗",
+    "category": "people"
+  },
+  {
+    "name": "kissing_smiling_eyes",
+    "keywords": [
+      "face",
+      "affection",
+      "valentines",
+      "infatuation",
+      "kiss"
+    ],
+    "char": "😙",
+    "category": "people"
+  },
+  {
+    "name": "kissing_closed_eyes",
+    "keywords": [
+      "face",
+      "love",
+      "like",
+      "affection",
+      "valentines",
+      "infatuation",
+      "kiss"
+    ],
+    "char": "😚",
+    "category": "people"
+  },
+  {
+    "name": "stuck_out_tongue_winking_eye",
+    "keywords": [
+      "face",
+      "prank",
+      "childish",
+      "playful",
+      "mischievous",
+      "smile",
+      "wink",
+      "tongue"
+    ],
+    "char": "😜",
+    "category": "people"
+  },
+  {
+    "name": "stuck_out_tongue_closed_eyes",
+    "keywords": [
+      "face",
+      "prank",
+      "playful",
+      "mischievous",
+      "smile",
+      "tongue"
+    ],
+    "char": "😝",
+    "category": "people"
+  },
+  {
+    "name": "stuck_out_tongue",
+    "keywords": [
+      "face",
+      "prank",
+      "childish",
+      "playful",
+      "mischievous",
+      "smile",
+      "tongue"
+    ],
+    "char": "😛",
+    "category": "people"
+  },
+  {
+    "name": "sunglasses",
+    "keywords": [
+      "face",
+      "cool",
+      "smile",
+      "summer",
+      "beach",
+      "sunglass"
+    ],
+    "char": "😎",
+    "category": "people"
+  },
+  {
+    "name": "roll_eyes",
+    "keywords": [
+      "face",
+      "eyeroll",
+      "frustrated"
+    ],
+    "char": "🙄",
+    "category": "people"
+  },
+  {
+    "name": "flushed",
+    "keywords": [
+      "face",
+      "blush",
+      "shy",
+      "flattered"
+    ],
+    "char": "😳",
+    "category": "people"
+  },
+  {
+    "name": "rage",
+    "keywords": [
+      "angry",
+      "mad",
+      "hate",
+      "despise"
+    ],
+    "char": "😡",
+    "category": "people"
+  },
+  {
+    "name": "confused",
+    "keywords": [
+      "face",
+      "indifference",
+      "huh",
+      "weird",
+      "hmmm",
+      ":/"
+    ],
+    "char": "😕",
+    "category": "people"
+  },
+  {
+    "name": "tired_face",
+    "keywords": [
+      "sick",
+      "whine",
+      "upset",
+      "frustrated"
+    ],
+    "char": "😫",
+    "category": "people"
+  },
+  {
+    "name": "triumph",
+    "keywords": [
+      "face",
+      "gas",
+      "phew",
+      "proud",
+      "pride"
+    ],
+    "char": "😤",
+    "category": "people"
+  },
+  {
+    "name": "fearful",
+    "keywords": [
+      "face",
+      "scared",
+      "terrified",
+      "nervous",
+      "oops",
+      "huh"
+    ],
+    "char": "😨",
+    "category": "people"
+  },
+  {
+    "name": "disappointed_relieved",
+    "keywords": [
+      "face",
+      "phew",
+      "sweat",
+      "nervous"
+    ],
+    "char": "😥",
+    "category": "people"
+  },
+  {
+    "name": "sleepy",
+    "keywords": [
+      "face",
+      "tired",
+      "rest",
+      "nap"
+    ],
+    "char": "😪",
+    "category": "people"
+  },
+  {
+    "name": "sweat",
+    "keywords": [
+      "face",
+      "hot",
+      "sad",
+      "tired",
+      "exercise"
+    ],
+    "char": "😓",
+    "category": "people"
+  },
+  {
+    "name": "dizzy_face",
+    "keywords": [
+      "spent",
+      "unconscious",
+      "xox",
+      "dizzy"
+    ],
+    "char": "😵",
+    "category": "people"
+  },
+  {
+    "name": "astonished",
+    "keywords": [
+      "face",
+      "xox",
+      "surprised",
+      "poisoned"
+    ],
+    "char": "😲",
+    "category": "people"
+  },
+  {
+    "name": "sneezing_face",
+    "keywords": [
+      "face",
+      "gesundheit",
+      "sneeze",
+      "sick",
+      "allergy"
+    ],
+    "char": "🤧",
+    "category": "people"
+  },
+  {
+    "name": "mask",
+    "keywords": [
+      "face",
+      "sick",
+      "ill",
+      "disease"
+    ],
+    "char": "😷",
+    "category": "people"
+  },
+  {
+    "name": "face_with_thermometer",
+    "keywords": [
+      "sick",
+      "temperature",
+      "thermometer",
+      "cold",
+      "fever"
+    ],
+    "char": "🤒",
+    "category": "people"
+  },
+  {
+    "name": "face_with_head_bandage",
+    "keywords": [
+      "injured",
+      "clumsy",
+      "bandage",
+      "hurt"
+    ],
+    "char": "🤕",
+    "category": "people"
+  },
+  {
+    "name": "sleeping",
+    "keywords": [
+      "face",
+      "tired",
+      "sleepy",
+      "night",
+      "zzz"
+    ],
+    "char": "😴",
+    "category": "people"
+  },
+  {
+    "name": "zzz",
+    "keywords": [
+      "sleepy",
+      "tired",
+      "dream"
+    ],
+    "char": "💤",
+    "category": "people"
+  },
+  {
+    "name": "clap",
+    "keywords": [
+      "hands",
+      "praise",
+      "applause",
+      "congrats",
+      "yay"
+    ],
+    "char": "👏",
+    "category": "people"
+  },
+  {
+    "name": "call_me_hand",
+    "keywords": [
+      "hands",
+      "gesture"
+    ],
+    "char": "🤙",
+    "category": "people"
+  },
+  {
+    "name": "+1",
+    "keywords": [
+      "thumbsup",
+      "yes",
+      "awesome",
+      "good",
+      "agree",
+      "accept",
+      "cool",
+      "hand",
+      "like"
+    ],
+    "char": "👍",
+    "category": "people"
+  },
+  {
+    "name": "-1",
+    "keywords": [
+      "thumbsdown",
+      "no",
+      "dislike",
+      "hand"
+    ],
+    "char": "👎",
+    "category": "people"
+  },
+  {
+    "name": "facepunch",
+    "keywords": [
+      "angry",
+      "violence",
+      "fist",
+      "hit",
+      "attack",
+      "hand"
+    ],
+    "char": "👊",
+    "category": "people"
+  },
+  {
+    "name": "fist",
+    "keywords": [
+      "fingers",
+      "hand",
+      "grasp"
+    ],
+    "char": "✊",
+    "category": "people"
+  },
+  {
+    "name": "v",
+    "keywords": [
+      "fingers",
+      "ohyeah",
+      "hand",
+      "peace",
+      "victory",
+      "two"
+    ],
+    "char": "✌",
+    "category": "people"
+  },
+  {
+    "name": "ok_hand",
+    "keywords": [
+      "fingers",
+      "limbs",
+      "perfect",
+      "ok",
+      "okay"
+    ],
+    "char": "👌",
+    "category": "people"
+  },
+  {
+    "name": "raised_hand",
+    "keywords": [
+      "fingers",
+      "stop",
+      "highfive",
+      "palm",
+      "ban"
+    ],
+    "char": "✋",
+    "category": "people"
+  },
+  {
+    "name": "raised_back_of_hand",
+    "keywords": [
+      "fingers",
+      "raised",
+      "backhand"
+    ],
+    "char": "🤚",
+    "category": "people"
+  },
+  {
+    "name": "muscle",
+    "keywords": [
+      "arm",
+      "flex",
+      "hand",
+      "summer",
+      "strong",
+      "biceps"
+    ],
+    "char": "💪",
+    "category": "people"
+  },
+  {
+    "name": "handshake",
+    "keywords": [
+      "agreement",
+      "shake"
+    ],
+    "char": "🤝",
+    "category": "people"
+  },
+  {
+    "name": "point_left",
+    "keywords": [
+      "direction",
+      "fingers",
+      "hand",
+      "left"
+    ],
+    "char": "👈",
+    "category": "people"
+  },
+  {
+    "name": "point_right",
+    "keywords": [
+      "fingers",
+      "hand",
+      "direction",
+      "right"
+    ],
+    "char": "👉",
+    "category": "people"
+  },
+  {
+    "name": "fu",
+    "keywords": [
+      "hand",
+      "fingers",
+      "rude",
+      "middle",
+      "flipping"
+    ],
+    "char": "🖕",
+    "category": "people"
+  },
+  {
+    "name": "raised_hand_with_fingers_splayed",
+    "keywords": [
+      "hand",
+      "fingers",
+      "palm"
+    ],
+    "char": "🖐",
+    "category": "people"
+  },
+  {
+    "name": "lips",
+    "keywords": [
+      "mouth",
+      "kiss"
+    ],
+    "char": "👄",
+    "category": "people"
+  },
+  {
+    "name": "ear",
+    "keywords": [
+      "face",
+      "hear",
+      "sound",
+      "listen"
+    ],
+    "char": "👂",
+    "category": "people"
+  },
+  {
+    "name": "eyes",
+    "keywords": [
+      "look",
+      "watch",
+      "stalk",
+      "peek",
+      "see"
+    ],
+    "char": "👀",
+    "category": "people"
+  },
+  {
+    "name": "santa",
+    "keywords": [
+      "festival",
+      "man",
+      "male",
+      "xmas",
+      "father christmas"
+    ],
+    "char": "🎅",
+    "category": "people"
+  },
+  {
+    "name": "sun_with_face",
+    "keywords": [
+      "nature",
+      "morning",
+      "sky"
+    ],
+    "char": "🌞",
+    "category": "animals_and_nature"
+  },
+  {
+    "name": "crescent_moon",
+    "keywords": [
+      "night",
+      "sleep",
+      "sky",
+      "evening",
+      "magic"
+    ],
+    "char": "🌙",
+    "category": "animals_and_nature"
+  },
+  {
+    "name": "star",
+    "keywords": [
+      "night",
+      "yellow"
+    ],
+    "char": "⭐",
+    "category": "animals_and_nature"
+  },
+  {
+    "name": "zap",
+    "keywords": [
+      "thunder",
+      "weather",
+      "lightning bolt",
+      "fast"
+    ],
+    "char": "⚡",
+    "category": "animals_and_nature"
+  },
+  {
+    "name": "fire",
+    "keywords": [
+      "hot",
+      "cook",
+      "flame"
+    ],
+    "char": "🔥",
+    "category": "animals_and_nature"
+  },
+  {
+    "name": "snowflake",
+    "keywords": [
+      "winter",
+      "season",
+      "cold",
+      "weather",
+      "christmas",
+      "xmas"
+    ],
+    "char": "❄️",
+    "category": "animals_and_nature"
+  },
+  {
+    "name": "soccer",
+    "keywords": [
+      "sports",
+      "football"
+    ],
+    "char": "⚽",
+    "category": "activity"
+  },
+  {
+    "name": "basketball",
+    "keywords": [
+      "sports",
+      "balls",
+      "NBA"
+    ],
+    "char": "🏀",
+    "category": "activity"
+  },
+  {
+    "name": "football",
+    "keywords": [
+      "sports",
+      "balls",
+      "NFL"
+    ],
+    "char": "🏈",
+    "category": "activity"
+  },
+  {
+    "name": "baseball",
+    "keywords": [
+      "sports",
+      "balls"
+    ],
+    "char": "⚾",
+    "category": "activity"
+  },
+  {
+    "name": "gift",
+    "keywords": [
+      "present",
+      "birthday",
+      "christmas",
+      "xmas"
+    ],
+    "char": "🎁",
+    "category": "objects"
+  },
+  {
+    "name": "tada",
+    "keywords": [
+      "party",
+      "congratulations",
+      "birthday",
+      "magic",
+      "circus",
+      "celebration"
+    ],
+    "char": "🎉",
+    "category": "objects"
+  },
+  {
+    "name": "black_nib",
+    "keywords": [
+      "pen",
+      "stationery",
+      "writing",
+      "write"
+    ],
+    "char": "✒️",
+    "category": "objects"
+  },
+  {
+    "name": "memo",
+    "keywords": [
+      "write",
+      "documents",
+      "stationery",
+      "pencil",
+      "paper",
+      "writing",
+      "legal",
+      "exam",
+      "quiz",
+      "test",
+      "study",
+      "compose"
+    ],
+    "char": "📝",
+    "category": "objects"
+  },
+  {
+    "name": "heart",
+    "keywords": [
+      "love",
+      "like",
+      "valentines"
+    ],
+    "char": "❤️",
+    "category": "symbols"
+  },
+  {
+    "name": "yellow_heart",
+    "keywords": [
+      "love",
+      "like",
+      "affection",
+      "valentines"
+    ],
+    "char": "💛",
+    "category": "symbols"
+  },
+  {
+    "name": "green_heart",
+    "keywords": [
+      "love",
+      "like",
+      "affection",
+      "valentines"
+    ],
+    "char": "💚",
+    "category": "symbols"
+  },
+  {
+    "name": "vs",
+    "keywords": [
+      "words",
+      "orange-square"
+    ],
+    "char": "🆚",
+    "category": "symbols"
+  },
+  {
+    "name": "speech_balloon",
+    "keywords": [
+      "bubble",
+      "words",
+      "message",
+      "talk",
+      "chatting"
+    ],
+    "char": "💬",
+    "category": "symbols"
+  },
+  {
+    "name": "clock1",
+    "keywords": [
+      "time",
+      "late",
+      "early",
+      "schedule"
+    ],
+    "char": "🕐",
+    "category": "symbols"
+  }
+]

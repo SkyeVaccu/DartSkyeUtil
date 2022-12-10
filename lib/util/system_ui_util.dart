@@ -40,17 +40,6 @@ class SystemUiUtil {
     }
   }
 
-  ///make status bar be transparent
-  static void makeStatusBarTransparent() {
-    //set the status bar color and the brightness
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarBrightness: Brightness.light,
-      ),
-    );
-  }
-
   ///close the soft keyboard, its truth is make the input lose the focus node
   static void closeSoftKeyboard() {
     //FocusManager is used to manage the focus node
