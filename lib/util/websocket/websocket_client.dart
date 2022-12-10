@@ -143,6 +143,7 @@ class WebSocketClient {
           if (_webSocket!.closeCode != null) {
             //we need to keep the connection
             if (webSocketClientStatus == WebSocketClientStatus.OPEN) {
+              Log.e("try to reconnect to the websocket server");
               //restart connect it
               _connect();
             }
