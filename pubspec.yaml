@@ -9,9 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: 4.6.1
-  flutter_screenutil: 5.6.0
-  flutter_smart_dialog: 4.5.3+3
+  get: 4.5.1
+  flutter_screenutil: 5.3.1
+  flutter_smart_dialog: 4.2.1
   responsive_builder: 0.4.3
   shared_preferences: 2.0.7
   uuid: 3.0.7
