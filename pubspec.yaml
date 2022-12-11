@@ -9,17 +9,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: 4.5.1
-  flutter_screenutil: 5.3.1
-  flutter_smart_dialog: 4.2.1
-  responsive_builder: 0.4.3
-  shared_preferences: 2.0.7
-  uuid: 3.0.7
-  date_format: 2.0.7
-  path_provider: 2.0.4
-  logger: 1.1.0
-  event_bus: 2.0.0
-  sqflite: 2.0.2
+  get: ^4.6.5
+  flutter_screenutil: ^5.6.0
+  flutter_smart_dialog: ^4.7.1
+  responsive_builder: ^0.4.3
+  shared_preferences: ^2.0.15
+  uuid: ^3.0.7
+  date_format: ^2.0.7
+  path_provider: ^2.0.11
+  logger: ^1.1.0
+  event_bus: ^2.0.0
+  sqflite: ^2.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
