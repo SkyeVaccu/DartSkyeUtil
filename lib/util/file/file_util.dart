@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:path_provider/path_provider.dart';
 import 'package:skye_utils/util/file/directory_type.dart';
 import 'package:skye_utils/util/isolate_util.dart';
 import 'package:skye_utils/util/serialize/serialize_util.dart';

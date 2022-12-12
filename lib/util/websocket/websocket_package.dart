@@ -70,7 +70,7 @@ class WebSocketPackage extends Serializable {
 ///the WebSocketPackageType
 class WebSocketPackageType {
   // request package
-  static const REQUEST = "REQUEST";
+  static const String REQUEST = "REQUEST";
   // response package
-  static const RESPONSE = "RESPONSE";
+  static const String RESPONSE = "RESPONSE";
 }

@@ -1,4 +1,4 @@
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:skye_utils/configuration/sqlite_configuration.dart';
 import 'package:skye_utils/initializer/initializer.dart';

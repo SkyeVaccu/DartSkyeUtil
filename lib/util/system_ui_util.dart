@@ -32,10 +32,10 @@ class SystemUiUtil {
   static void setOperationBarState(OperationBarState operationBarState) {
     switch (operationBarState) {
       case OperationBarState.Hide:
-        SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,overlays:[SystemUiOverlay.top]);
         break;
       case OperationBarState.Show:
-        SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top, SystemUiOverlay.bottom]);
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,overlays:[SystemUiOverlay.top, SystemUiOverlay.bottom]);
         break;
     }
   }

@@ -34,6 +34,12 @@ class HttpConfiguration {
       _RequestPart.PROTOCOL: "http",
       _RequestPart.HOST: "10.0.2.2",
       _RequestPart.PORT: "10035",
+    },
+    //Local environment
+    _Profile.DEVELOPMENT: {
+      _RequestPart.PROTOCOL: "http",
+      _RequestPart.HOST: "vaccum.ltd",
+      _RequestPart.PORT: "10035",
     }
   };
 }
