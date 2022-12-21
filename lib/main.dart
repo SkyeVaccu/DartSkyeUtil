@@ -11,14 +11,18 @@ import 'package:skye_utils/util/color/color_util.dart';
 import 'configuration/flutter_screenutil_configuration.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     //call all initializer
-    InitializerConfiguration.initializerList.forEach((initializer) => initializer.init(context));
+    for (var initializer in InitializerConfiguration.initializerList) {
+      initializer.init(context);
+    }
     //create the GetMaterial App
     return GetMaterialApp(
         //set the default light theme
@@ -30,7 +34,7 @@ class MyApp extends StatelessWidget {
         //set the default the language
         locale: ui.window.locale,
         //the alternative language
-        fallbackLocale: Locale('zh', 'CN'),
+        fallbackLocale: const Locale('zh', 'CN'),
         //close the debug info show
         debugShowCheckedModeBanner: false,
         //set the entrance router page

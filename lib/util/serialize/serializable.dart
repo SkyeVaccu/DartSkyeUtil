@@ -26,7 +26,7 @@ abstract class Serializable {
     }
     //traverse the map
     for (var entry in json.entries) {
-      if (attributes.indexOf(entry.key) == -1) {
+      if (!attributes.contains(entry.key)) {
         return false;
       }
     }

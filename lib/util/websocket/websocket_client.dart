@@ -45,7 +45,7 @@ class WebSocketClient {
   //the status of the websocket client
   WebSocketClientStatus webSocketClientStatus = WebSocketClientStatus.WAIT;
   //it's the table store all receivers
-  final SkyeTable<String, String, List<WebSocketClientReceiver>> _receiverTable = new SkyeTable();
+  final SkyeTable<String, String, List<WebSocketClientReceiver>> _receiverTable = SkyeTable();
   //it's the table store all senders
   ///the builder which is used to build an WebSocketClient Object by host and port, it will use "ws" protocol
   WebSocketClient.signBuilder({
@@ -62,7 +62,7 @@ class WebSocketClient {
     this.errorListener,
   });
 
-  final SkyeTable<String, String, List<WebSocketClientSender>> _senderTable = new SkyeTable();
+  final SkyeTable<String, String, List<WebSocketClientSender>> _senderTable = SkyeTable();
 
   ///the builder which is used to build an WebSocketClient Object by uri
   WebSocketClient.uriBuilder({
@@ -164,7 +164,7 @@ class WebSocketClient {
     } else {
       //handle the sign builder
       if (ObjectUtil.isEmpty(uri)) {
-        uri = protocol + "://" + host! + ":" + port!;
+        uri = "$protocol://${host!}:${port!}";
       }
       //concat the url params
       String urlParamsString = "";
@@ -173,9 +173,9 @@ class WebSocketClient {
         urlParams!.forEach((key, value) {
           if (ObjectUtil.isNotEmpty(value)) {
             if (cnt == 0) {
-              urlParamsString += ("?" + key + "=" + value);
+              urlParamsString += ("?$key=$value");
             } else {
-              urlParamsString += ("&" + key + "=" + value);
+              urlParamsString += ("&$key=$value");
             }
             cnt++;
           }
@@ -197,8 +197,7 @@ class WebSocketClient {
         //call the message listener
         messageListener?.call(message);
         //deserialize the response message
-        WebSocketPackage webSocketPackage =
-            SerializeUtil.deserialize(message, new WebSocketPackage());
+        WebSocketPackage webSocketPackage = SerializeUtil.deserialize(message, WebSocketPackage());
         //get all assigned websocket client receiver
         List<WebSocketClientReceiver>? webSocketClientReceiverList =
             _receiverTable.get(webSocketPackage.loop!, webSocketPackage.subject!);

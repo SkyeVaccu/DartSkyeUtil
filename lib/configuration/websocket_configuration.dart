@@ -16,17 +16,17 @@ class WebSocketConfiguration {
     String port = _environment[currentProfile]![_RequestPart.PORT]!;
     //handle the ":" problem
     if (!port.startsWith("/")) {
-      port = ":" + port;
+      port = ":$port";
     }
     if (ObjectUtil.isNotEmpty(_Prefix)) {
-      return protocol + "://" + host + port + "/" + _Prefix;
+      return "$protocol://$host$port/$_Prefix";
     } else {
-      return protocol + "://" + host + port;
+      return "$protocol://$host$port";
     }
   }();
   //the configuration of environment
   //if it isn't the mock environment, you must add the ':' before the port
-  static Map<_Profile, Map<_RequestPart, String>> _environment = {
+  static final Map<_Profile, Map<_RequestPart, String>> _environment = {
     //Mock environment
     _Profile.DEVELOPMENT: {
       _RequestPart.PROTOCOL: "ws",

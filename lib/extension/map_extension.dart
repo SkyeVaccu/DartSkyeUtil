@@ -11,18 +11,21 @@ extension MapExtension<Q, P> on Map<Q, P> {
   ///@param endWidget : which will show in the end
   ///@return : the widget list which is created by the function
   List<Widget> createWidgetList(
-      {Widget? startWidget,Widget? joinWidget, required Widget Function(Q, P) function, Widget? endWidget}) {
+      {Widget? startWidget,
+      Widget? joinWidget,
+      required Widget Function(Q, P) function,
+      Widget? endWidget}) {
     //the widget list which is used to return
     List<Widget> list = [];
     //if the startWidget exist
     if (null != startWidget) {
       list.add(startWidget);
     }
-    int index=0;
-    for (var entry in this.entries) {
+    int index = 0;
+    for (var entry in entries) {
       list.add(function.call(entry.key, entry.value));
       //if the join widget isn't null , we will append the joinWidget after the per widget
-      if (null != joinWidget && index!= (this.length-1)) {
+      if (null != joinWidget && index != (length - 1)) {
         list.add(joinWidget);
       }
       index++;
@@ -38,7 +41,7 @@ extension MapExtension<Q, P> on Map<Q, P> {
   ///@param map : the map which will be appended
   ///@return : the conversion map
   Map<Q, P> merge(Map<Q, P> map) {
-    this.addAll(map);
+    addAll(map);
     return this;
   }
 

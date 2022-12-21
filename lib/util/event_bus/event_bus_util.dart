@@ -25,8 +25,8 @@ class EventBusUtil {
   ///@parma onError : listen the error when the bus event is error
   ///@param onDone : it will be executed when the listener is done
   ///@param cancelOnError : whether cancel the listener when the error happen
-  static void listen(void onData(BusEvent event)?, BusEventType busEventType,
-      {Function? onError, void onDone()?, bool? cancelOnError}) {
+  static void listen(void Function(BusEvent event)? onData, BusEventType busEventType,
+      {Function? onError, void Function()? onDone, bool? cancelOnError}) {
     //add the listener
     _getInstance().on<BusEvent>().listen((BusEvent event) {
       if (event.busEventType == busEventType) {

@@ -60,7 +60,7 @@ class ColorUtil {
     //get the red green blue
     final int r = color.red, g = color.green, b = color.blue;
     //create the swatch color
-    strengths.forEach((strength) {
+    for (var strength in strengths) {
       final double ds = 0.5 - strength;
       swatch[(strength * 1000).round()] = Color.fromRGBO(
         r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -68,7 +68,7 @@ class ColorUtil {
         b + ((ds < 0 ? b : (255 - b)) * ds).round(),
         1,
       );
-    });
+    }
     return MaterialColor(color.value, swatch);
   }
 }

@@ -61,9 +61,9 @@ class SkyeTable<Q, P, Y> {
     Map<Q, Y> map = {};
     for (Q key in _table.keys) {
       if (_table[key]?[column] != null) {
-        map[key] = _table[key]![column]!;
+        map[key] = _table[key]![column] as Y;
       }
     }
-    return map.length == 0 ? null : map;
+    return map.isEmpty ? null : map;
   }
 }

@@ -18,15 +18,15 @@ class FlutterScreenUtilConfiguration {
     Size? currentSize;
     //mobile device
     if (relativeWidth <= 480) {
-      currentSize = isPortrait ? Size(1080, 2340) : Size(2340, 1080);
+      currentSize = isPortrait ? const Size(1080, 2340) : const Size(2340, 1080);
     }
     //tablet device
     else if (480 < relativeWidth && relativeWidth <= 900) {
-      currentSize = isPortrait ? Size(1620, 2160) : Size(2160, 1620);
+      currentSize = isPortrait ? const Size(1620, 2160) : const Size(2160, 1620);
     }
     //desktop device
     else if (relativeWidth > 900) {
-      currentSize = isPortrait ? Size(1080, 1920) : Size(1920, 1080);
+      currentSize = isPortrait ? const Size(1080, 1920) : const Size(1920, 1080);
     }
     ScreenUtil.init(
       context,

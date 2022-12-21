@@ -23,10 +23,10 @@ class FileUtil {
       late File file;
       if (directory is Directory) {
         //create or get the new File object
-        file = File(directory.path + "/" + fileName);
+        file = File("${directory.path}/$fileName");
       } else {
         //create or get the new File object
-        file = File((directory as List<Directory>)[0].path + "/" + fileName);
+        file = File("${(directory as List<Directory>)[0].path}/$fileName");
       }
       return Operator(file);
     }

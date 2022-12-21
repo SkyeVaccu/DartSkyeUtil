@@ -26,7 +26,7 @@ class HttpClient extends GetConnect {
   //the response interceptor list
   List<ResponseInterceptor>? responseInterceptorList;
   //the response decoder which is used to decode the raw response string
-  HttpDecoder? httpDecoder = new AsyncDecoder();
+  HttpDecoder? httpDecoder = AsyncDecoder();
 
   ///build the http client by the host and port
   HttpClient.signBuilder({
@@ -56,7 +56,7 @@ class HttpClient extends GetConnect {
         if (ObjectUtil.isAnyEmpty([host, port])) {
           Log.e("can't find the http client sign");
         } else {
-          uri = protocol + "://" + host! + ":" + port!;
+          uri = "$protocol://${host!}:${port!}";
         }
       }
       return uri;

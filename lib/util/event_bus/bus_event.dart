@@ -12,6 +12,6 @@ class BusEvent {
   late DateTime createTime;
 
   BusEvent(this.busEventType, this.content) {
-    this.createTime = DateTime.now();
+    createTime = DateTime.now();
   }
 }

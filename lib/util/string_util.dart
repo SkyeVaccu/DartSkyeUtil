@@ -6,7 +6,7 @@ import 'package:uuid/uuid.dart';
 class StringUtil {
   ///create a UUID
   ///@return : the UUID string
-  static String getUUID() => Uuid().v1();
+  static String getUUID() => const Uuid().v1();
 
   ///split the string and keep the matched substring
   ///@param str : the origin string
@@ -14,13 +14,13 @@ class StringUtil {
   ///@return : the result list which include the split char
   static List<String> splitAndKeepJoin(String str, String reg) {
     //the regular expression
-    Pattern pattern = new RegExp(reg);
+    Pattern pattern = RegExp(reg);
     //the match substring of the String
     List<String> matchList = [];
     Iterable<Match> iterable = pattern.allMatches(str);
-    iterable.forEach((element) {
+    for (var element in iterable) {
       matchList.add(element.group(0) ?? "");
-    });
+    }
     //the non-match substring of the string
     List<String> nonMatchList = str.split(pattern);
     //join the match list and the non-match list

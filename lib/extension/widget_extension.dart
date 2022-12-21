@@ -18,12 +18,12 @@ extension WidgetExtension on Widget {
     late SizedBox sizedBox;
     //if the user set the width and the height ,we will use it
     if (width != null && height != null) {
-      sizedBox = new SizedBox(
+      sizedBox = SizedBox(
         width: width,
         height: height,
       );
     } else {
-      sizedBox = new SizedBox();
+      sizedBox = const SizedBox();
     }
     //handle the state
     if (state == null) {

@@ -5,11 +5,11 @@ import 'package:skye_utils/util/string_util.dart';
 class DatetimeUtil {
   ///get the current time
   ///@return : the current datetime
-  static DateTime now() => new DateTime.now();
+  static DateTime now() => DateTime.now();
 
   ///get the timeStamp of current date
   ///@return : the timestamp of current date time
-  static int nowTimeStamp() => new DateTime.now().millisecondsSinceEpoch;
+  static int nowTimeStamp() => DateTime.now().millisecondsSinceEpoch;
 
   ///return the DateTime assigned to the timeStamp
   ///@param timeStamp : the milliseconds

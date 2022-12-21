@@ -8,7 +8,7 @@ class IsolateUtil {
   ///@param function : the execution function
   ///@return : _IsolateRunnerBuilder object
   static _IsolateRunnerBuilder builder(Function function) {
-    return new _IsolateRunnerBuilder(function);
+    return _IsolateRunnerBuilder(function);
   }
 }
 
@@ -38,6 +38,6 @@ class _IsolateRunnerBuilder {
   ///run the function
   ///@return : the return value
   FutureOr<dynamic> run() {
-    return compute(this.function as FutureOr<dynamic> Function(List<dynamic>), parameterList);
+    return compute(function as FutureOr<dynamic> Function(List<dynamic>), parameterList);
   }
 }

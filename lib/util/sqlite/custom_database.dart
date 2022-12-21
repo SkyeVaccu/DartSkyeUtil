@@ -36,14 +36,14 @@ class CustomDatabase {
         // Set the path to the database. Note: Using the `join` function from the
         // `path` package is best practice to ensure the path is correctly
         // constructed for each platform.
-        (await sqlite.getDatabasesPath()).join(databaseName + ".db"),
+        (await sqlite.getDatabasesPath()).join("$databaseName.db"),
         onCreate: (Database db, int version) {
-      databaseTableList.forEach((databaseTable) {
+      for (var databaseTable in databaseTableList) {
         //get the create table sql
         String createTableSQL = _getCreateTableSQL(databaseTable);
         //execute the sql
         db.execute(createTableSQL);
-      });
+      }
     });
   }
 
@@ -58,14 +58,14 @@ class CustomDatabase {
     }
     //concat the data to the sql
     else {
-      String createTableSQL = "CREATE TABLE " + databaseTable.tableName + "( ";
+      String createTableSQL = "CREATE TABLE ${databaseTable.tableName}( ";
       int cnt = 0;
       for (String columnName in databaseTable.dataColumn.keys) {
         if (columnName == databaseTable.primaryColumn) {
           createTableSQL +=
-              (columnName + " " + databaseTable.dataColumn[columnName]!.info + " PRIMARY KEY");
+              ("$columnName ${databaseTable.dataColumn[columnName]!.info} PRIMARY KEY");
         } else {
-          createTableSQL += (columnName + " " + databaseTable.dataColumn[columnName]!.info);
+          createTableSQL += ("$columnName ${databaseTable.dataColumn[columnName]!.info}");
         }
         if (cnt != (databaseTable.dataColumn.length - 1)) {
           createTableSQL += ",";
@@ -121,7 +121,7 @@ class CustomDatabase {
       return SerializeUtil.asCustomized(result, targetObj);
     } else {
       List<Map<String, dynamic>> result = await _database!.query(tableName,
-          columns: [identitySign], where: identitySign + "=?", whereArgs: [ownerId]);
+          columns: [identitySign], where: "$identitySign=?", whereArgs: [ownerId]);
       return SerializeUtil.asCustomized(result, targetObj);
     }
   }
@@ -149,7 +149,7 @@ class CustomDatabase {
   }) async {
     List<Map<String, dynamic>> result =
         await _database!.query(tableName, columns: ["id"], where: "id=?", whereArgs: [id]);
-    return result.length > 0;
+    return result.isNotEmpty;
   }
 
   ///delete the obj by id

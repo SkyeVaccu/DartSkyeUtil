@@ -7,15 +7,14 @@ import 'package:logger/logger.dart';
 class Log {
   ///the map stores all the authorName and the logger,
   ///the key is the author name , the value is the logger object
-  static Map<String, Logger> _loggerMap = {};
+  static final Map<String, Logger> _loggerMap = {};
 
   ///get the corresponding logger by the author name
   ///@param authorName : the developer name
   ///@param stackMethodCount : the stack method count which will be shown in the console
   ///@return : the logger printer
   static Logger getInstance({String authorName = "Skye", int stackMethodCount = 0}) {
-    return _loggerMap[authorName] ??=
-        Logger(printer: new PrettyPrinter(methodCount: stackMethodCount));
+    return _loggerMap[authorName] ??= Logger(printer: PrettyPrinter(methodCount: stackMethodCount));
   }
 
   ///print the info log
@@ -23,7 +22,7 @@ class Log {
   ///@param authorName : the developer name
   static void i(String message, {String authorName = "Skye"}) {
     var logger = getInstance(authorName: authorName);
-    logger.i(authorName + ":" + message);
+    logger.i("$authorName:$message");
   }
 
   ///print the debug log
@@ -31,7 +30,7 @@ class Log {
   ///@param authorName : the developer name
   static void d(String message, {String authorName = "Skye"}) {
     var logger = getInstance(authorName: authorName);
-    logger.i(authorName + ":" + message);
+    logger.i("$authorName:$message");
   }
 
   ///print the warning log
@@ -39,7 +38,7 @@ class Log {
   ///@param authorName : the developer name
   static void w(String message, {String authorName = "Skye"}) {
     var logger = getInstance(authorName: authorName);
-    logger.w(authorName + ":" + message);
+    logger.w("$authorName:$message");
   }
 
   ///print the error log
@@ -47,6 +46,6 @@ class Log {
   ///@param authorName : the developer name
   static void e(String message, {String authorName = "Skye", dynamic error}) {
     var logger = getInstance(authorName: authorName);
-    logger.e(authorName + ":" + message, error);
+    logger.e("$authorName:$message", error);
   }
 }

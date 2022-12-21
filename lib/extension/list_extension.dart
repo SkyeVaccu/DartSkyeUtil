@@ -11,20 +11,20 @@ extension ListExtension<E> on List<E> {
   ///@param endWidget : which will show in the end
   ///@return : the widget list which is created by the function
   List<Widget> createWidgetList(
-      { Widget? startWidget,
-        Widget? joinWidget,
-        required Widget Function(int, E) function,
-        Widget? endWidget}) {
+      {Widget? startWidget,
+      Widget? joinWidget,
+      required Widget Function(int, E) function,
+      Widget? endWidget}) {
     //the list which is used to return
     List<Widget> list = [];
     //if the startWidget exist
     if (null != startWidget) {
       list.add(startWidget);
     }
-    for (var index = 0; index < this.length; index++) {
+    for (var index = 0; index < length; index++) {
       list.add(function.call(index, this[index]));
       //if the joinWidget isn't null , append it into after per widget. it won't shown after the last widget
-      if (null != joinWidget && index!= (this.length-1)) {
+      if (null != joinWidget && index != (length - 1)) {
         list.add(joinWidget);
       }
     }
@@ -51,7 +51,7 @@ extension ListExtension<E> on List<E> {
   ///@param iterable : the list which will be appended
   ///@return : the conversion list
   List<E> merge(Iterable<E> iterable) {
-    this.addAll(iterable);
+    addAll(iterable);
     return this;
   }
 
@@ -59,7 +59,7 @@ extension ListExtension<E> on List<E> {
   ///@param iterable : the target item
   ///@return : the conversion list
   List<E> addItem(E item) {
-    this.add(item);
+    add(item);
     return this;
   }
 

@@ -14,7 +14,7 @@ class ErrorInterceptor extends ResponseInterceptor {
   FutureOr<Response> intercept(Request request, Response response) {
     //judge the request whether is true
     if (response.hasError) {
-      Log.e("status code:" + response.statusCode.toString());
+      Log.e("status code:${response.statusCode}");
     }
     //if it is ok , return the error
     return response;

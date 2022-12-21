@@ -8,8 +8,8 @@ class SliverUtil {
   static MediaQuery removeTop(ListView listView, BuildContext context) {
     return MediaQuery.removePadding(
       context: context,
-      child: listView,
       removeTop: true,
+      child: listView,
     );
   }
 }

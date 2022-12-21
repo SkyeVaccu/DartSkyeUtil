@@ -9,7 +9,7 @@ extension ListViewExtension on ListView {
   ScrollConfiguration removeWaveEffects() {
     return ScrollConfiguration(
       //use the customized behavior
-      behavior: _CusBehavior(this.controller),
+      behavior: _CusBehavior(controller),
       child: this,
     );
   }
@@ -19,11 +19,11 @@ extension ListViewExtension on ListView {
 class _CusBehavior extends ScrollBehavior {
   final ScrollController? scrollController;
 
-  _CusBehavior(this.scrollController);
+  const _CusBehavior(this.scrollController);
 
   @override
   Widget buildViewportChrome(BuildContext context, Widget child, AxisDirection axisDirection) {
-    //android and fuchsia don't have the overscroll effection
+    //android and fuchsia don't have the overscroll affection
     if (Platform.isAndroid || Platform.isFuchsia) {
       return child;
     }
