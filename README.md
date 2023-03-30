@@ -1,8 +1,8 @@
-### 介绍
+## 介绍
 
 一个简单的工具类，参照本人的**JavaSkyeUtil**的库，使用dart进行编写,这个工具类包含有一些常规的字符串处理功能等，提供Http等一系列功能，主要完成了对于基本功能的封装，从而能够更加方便地使用
 
-#### 日志工具  
+### 日志工具  
 提供默认的日志对象，可以自定义默认的日志前缀名  
 ```dart
 Logger logger = Log.getInstance(author="alien");
@@ -14,7 +14,7 @@ Log.d("this is a debug logger");
 Log.w("this is a warning logger");
 Log.e("this is an error logger");
 ```
-#### 资源工具  
+### 资源工具  
 可以将资源文件转换为字符串对象  
 ```dart
 String assetStr = await AssetUtil.readDataFile("emoji.json");
@@ -23,7 +23,7 @@ String assetStr = await AssetUtil.readDataFile("emoji.json");
 ```dart
 AssetImage assetImage = AssetUtil.readDataImage("asset_image.png"); 
 ```
-#### 缓存工具   
+### 缓存工具   
 提供对应数据在内存中全局应用  
 **存对象**  
 ```dart
@@ -37,7 +37,7 @@ dynamic value = CacheUtil.get("key");
 ```dart
 CacheUtil.remove("key");
 ```
-#### 剪切板工具  
+### 剪切板工具  
 剪切板写入数据
 ```dart
 ClipboardUtil.put("data");
@@ -46,7 +46,7 @@ ClipboardUtil.put("data");
 ```dart
 String data = await ClipboardUtil.get();
 ```
-#### 时间工具  
+### 时间工具  
 获得当前的时间  
 ```dart
 // 获得DateTime对象
@@ -66,7 +66,7 @@ DateTime dateTime = DatetimeUtil.convertStringToDate("2022-12-10");
 ```dart
 String dateStr = DatetimeUtil.convertDateToString(dateTime,"yyyy-mm-dd");
 ```
-#### HTTP工具  
+### HTTP工具  
 拼接对应的参数，形成请求路径  
 ```dart
 // isAnonymous 将会决定前缀（在HttpConfiguration中配置）
@@ -76,7 +76,7 @@ String requestPath = HttpUtil.join("user","login",isAnonymous=false);
 ```dart
 String responseBody = await HttpUtil.getBodyString(response);
 ```
-#### 多线程工具  
+### 多线程工具  
 能够帮助你方便地开启一个新的线程来运行对应的函数  
 1. 声明一个函数 *（该函数必须为静态函数或者为非类函数）*  
 ```dart
@@ -88,13 +88,13 @@ static FutureOr<dynamic> function(List<dynamic> parameter) async {
 ```dart
 dynamic result = await IsolateUtil.builder(function).setParameter(1).setParameter(2).run();
 ```
-#### 数字工具  
+### 数字工具  
 创建随机数字  
 ```dart
 // 将会获得一个 0-100 的随机数字
 int number = NumberUtil.createRandomNumber(ceil=100,floor=0);
 ```
-#### 对象工具   
+### 对象工具   
 单个判空操作
 ```dart
 bool result = ObjectUtil.isEmpty(obj);
@@ -110,7 +110,7 @@ bool result = ObjectUtil.isAnyEmpty(objList);
 bool result = ObjectUtil.isDefaultValue(obj);
 bool result = ObjectUtil.isAllDefaultValue(objList);
 ```
-#### 屏幕参数工具  
+### 屏幕参数工具  
 获得Material Design的AppBar高度  
 ```dart
 double height = ScreenUtil.getAppBarHeight();
@@ -123,7 +123,7 @@ double height = ScreenUtil.getScaffoldBodyHeight();
 ```dart
 double height = ScreenUtil.getSoftKeyboardHeight();
 ```
-#### SharedPreference工具  
+### SharedPreference工具  
 能够方便地对SharedPreference进行操作  
 放数据  
 ```dart
@@ -133,7 +133,7 @@ SharedPreferenceUtil.put("key","value");
 ```dart
 dynamic value = await SharedPreferenceUtil.get("key");
 ```  
-#### 表格  
+### 表格  
 提供一种由X，Y来操作表格数据的方式  
 ```dart
 SkyeTable table = SkyeTable();
@@ -158,12 +158,12 @@ Map<String,value>? row = table.getRow("x");
 // 获得整列
 Map<String,value>? column = table.getColumn("y");
 ```
-#### Sliver工具  
+### Sliver工具  
 删除List自带的上方Padding  
 ```dart
 MediaQuery mediaQuery = SliverUtil.removeTop(listView,context);
 ```
-#### 字符串工具  
+### 字符串工具  
 生成一个UUID  
 ```dart
 String uuid = StringUtil.getUUID();
@@ -173,7 +173,7 @@ String uuid = StringUtil.getUUID();
 // 返回["www",".","google",".","com"]
 List<String> list=StringUtil.splitAndJoin("www.google.com",".");
 ```
-#### 系统ui工具  
+### 系统ui工具  
 是否为竖屏状态  
 ```dart
 bool isPortrait = SystemUiUtil.isPortrait(context);
@@ -202,7 +202,7 @@ SystemUiUtil.showToast("this is an error message");
 // 消息内容取决于状态
 SystemUiUtil.showToast("error message",successMsg="success message",state=isTrue);
 ```
-#### 计时工具  
+### 计时工具  
 延迟执行任务   
 ```dart
 // 任务将会在1S后执行
@@ -218,12 +218,12 @@ TimerUtil.periodExecuteTask(
   delaySeconds = 500
 );
 ```
-#### 组件工具  
+### 组件工具  
 创建一个具有高斯模糊背景的组件  
 ```dart
 Widget widget = convertToGaussBlurWidget(widget);
 ```
-#### 颜色工具  
+### 颜色工具  
 创建一个符合material规范的颜色  
 ```dart
 MaterialColor color = ColorUtil.createMaterialColor(color);
@@ -240,7 +240,7 @@ ThemeData themeData = ColorUtil.getThemeData(isDark=true);
 ```dart
 Color color = ColorUitl.getAdaptColor(AdaptColorType.ThemeColor,reverse=false)
 ```
-#### 总线工具  
+### 总线工具  
 发送一个总线事件  
 ```dart
 EventBusUtil.send(busEvent);
@@ -255,7 +255,88 @@ EventBusUtil.listen(
   cancelOnError=false
 );
 ```
- 
+### 文件工具
+获得一个文件操作对象  
+```dart
+Operator operator = await FileUtil.operate("aa.txt",directoryType=DirectoryType.ApplicationCacheDirectory)
+```
+读文件内容 
+```dart
+// 二进制读取
+List<int> content = await operator.readFileAsBytes();
+// 字符串读取
+String content = await operator.readFileAsString();
+// 对象读取
+dynamic content = await opertor.readFileAsObject(User());
+```
+写文件内容  
+```dart
+// 二进制写入
+operator.writeFileBytes(content,needCover=false);
+// 字符串写入
+operator.writeFileString(content,needConver=false);
+// 对象写入
+opertor.writeFileAsObject(user,needConver=false);
+```
+### 序列化工具  
+1. 创建一个类继承`Serializable`接口  
+2. 使用`SerializeUtil`实现序列化和反序列化  
+
+将自定义对象转换成由 `Map`，`List`等组成的基本对象
+```dart
+Map map = SerializeUtil.asBasic(user)
+```
+将基本对象转换成自定义对象  
+```dart
+User user = SerializeUtil.asCustomized<User>(map,User());
+```
+序列化为字符串  
+```dart
+String? json = SerializeUtil.serialize(user);
+```
+反序列化为对象
+```dart
+User user = SerializeUtil.deserialize<User>(json,User())
+```
+类型强转  
+```dart
+String val = SerializeUtil.asT<String>(value);
+```
+### SQLite工具  
+1. 创建一个SQLite数据库  
+```dart
+CustomDatabase database = CustomDatabase.builder("tempDatebase","skye",[dataTable1,dataTable2]);
+```
+2. 初始化  
+```dart
+database.init();
+```
+3. 基本的CRUD  
+```dart
+// 插入一条数据
+database.insert("User",user);
+// 根据Id查找数据
+User user = await database.findOneById<User>("User","1",user);
+// 找到全部对象
+List<User> userList = await database.findAll<User>("User","skye",User());
+// 更新一个对象
+int count = await database.updateOneById<User>("User","1",user);
+// 判断对象是否存在
+bool isExist = await database.isExistById<User>("User","1");
+// 删除一个对象
+int count = await databse.deleteOneById<User>("User","1");
+```
+4. 原生SQL操作  
+```dart
+// 原生查询
+List<Map<String,dynamica>> data = database.rawQuery(sql,["1"]);
+// 原生更新
+int count = database.rawUpdate(sql,["1","aa"]);
+// 原生插入  
+int count = database.rawInsert(sql,["1","aa"]);
+// 原生删除  
+int count = database.rawDelete(sql,["1","aa"]);
+```
 
 
 
