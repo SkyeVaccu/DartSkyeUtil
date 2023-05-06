@@ -26,7 +26,7 @@ class HttpClient extends GetConnect {
   //the response interceptor list
   List<ResponseInterceptor>? responseInterceptorList;
   //the response decoder which is used to decode the raw response string
-  HttpDecoder? httpDecoder = AsyncDecoder();
+  HttpDecoder? httpDecoder;
 
   ///build the http client by the host and port
   HttpClient.signBuilder({
@@ -49,6 +49,8 @@ class HttpClient extends GetConnect {
 
   @override
   void onInit() {
+    // set the default http decoder
+    httpDecoder ??= AsyncDecoder();
     //set the base url
     //it just will take effect when you use the websocket
     httpClient.baseUrl = (() {
