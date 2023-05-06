@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:skye_utils/util/http/http_decoder.dart';
-import 'package:skye_utils/util/isolate_util.dart';
-import 'package:skye_utils/util/logger_util.dart';
-import 'package:skye_utils/util/object_util.dart';
-import 'package:skye_utils/util/serialize/serializable.dart';
-import 'package:skye_utils/util/serialize/serialize_util.dart';
+import '../../util/http/http_decoder.dart';
+import '../../util/isolate_util.dart';
+import '../../util/logger_util.dart';
+import '../../util/object_util.dart';
+import '../../util/serialize/serializable.dart';
+import '../../util/serialize/serialize_util.dart';
 
 /// it's the decoder which is used to decode the response json
 class AsyncDecoder implements HttpDecoder {

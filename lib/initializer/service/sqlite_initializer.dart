@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/configuration/sqlite_configuration.dart';
-import 'package:skye_utils/initializer/initializer.dart';
-import 'package:skye_utils/util/sqlite/custom_database.dart';
+import '../../configuration/sqlite_configuration.dart';
+import '../../initializer/initializer.dart';
+import '../../util/sqlite/custom_database.dart';
 
 ///it's the initializer which is used to initialize the sqlite database
 class SqliteInitializer extends Initializer {

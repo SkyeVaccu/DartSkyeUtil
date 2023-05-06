@@ -1,6 +1,6 @@
 import 'package:event_bus/event_bus.dart';
-import 'package:skye_utils/util/event_bus/bus_event.dart';
-import 'package:skye_utils/util/event_bus/bus_event_type.dart';
+import '../../util/event_bus/bus_event.dart';
+import '../../util/event_bus/bus_event_type.dart';
 
 ///event bus class which is used to do some operation across uncorrelated page
 class EventBusUtil {

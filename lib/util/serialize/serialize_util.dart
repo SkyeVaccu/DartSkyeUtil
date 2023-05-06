@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:skye_utils/util/serialize/serializable.dart';
+import '../../util/serialize/serializable.dart';
 
 /// the class which handle the serialize thing, like serializing or deserializing
 class SerializeUtil {

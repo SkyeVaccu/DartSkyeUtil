@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/websocket/websocket_client.dart';
+import '../../util/websocket/websocket_client.dart';
 
 ///the most top websocket client form
 abstract class WebSocketClientOperator {

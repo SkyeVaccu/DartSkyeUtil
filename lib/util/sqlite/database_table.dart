@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/sqlite/sqlite_data_type.dart';
+import '../../util/sqlite/sqlite_data_type.dart';
 
 ///it's used to identify an table in the database
 class DatabaseTable {

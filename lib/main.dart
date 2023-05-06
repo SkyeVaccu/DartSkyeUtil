@@ -3,10 +3,10 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/configuration/initializer_configuration.dart';
-import 'package:skye_utils/configuration/language_configuration.dart';
-import 'package:skye_utils/configuration/route_configuration.dart';
-import 'package:skye_utils/util/color/color_util.dart';
+import '../configuration/initializer_configuration.dart';
+import '../configuration/language_configuration.dart';
+import '../configuration/route_configuration.dart';
+import '../util/color/color_util.dart';
 
 import 'configuration/flutter_screenutil_configuration.dart';
 

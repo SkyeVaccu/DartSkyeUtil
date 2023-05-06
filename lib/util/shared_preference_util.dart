@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:skye_utils/util/serialize/serialize_util.dart';
+import '../util/serialize/serialize_util.dart';
 
 /// this class is used to store all cache data into the cache xml file
 /// the directory path is '/data/user/0/<package name>/shared_prefs/'

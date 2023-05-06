@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/standard/color_info.dart';
-import 'package:skye_utils/util/color/color_type.dart';
-import 'package:skye_utils/util/number_util.dart';
+import '../../standard/color_info.dart';
+import '../../util/color/color_type.dart';
+import '../../util/number_util.dart';
 
 ///the util is used to get the correct color
 class ColorUtil {

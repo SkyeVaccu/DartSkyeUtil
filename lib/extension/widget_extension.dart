@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skye_utils/util/object_util.dart';
+import '../util/object_util.dart';
 
 /// it's the extension of the widget
 extension WidgetExtension on Widget {

@@ -1,5 +1,5 @@
 import 'package:date_format/date_format.dart' as DateFormat;
-import 'package:skye_utils/util/string_util.dart';
+import '../util/string_util.dart';
 
 ///it's used to operate the datetime
 class DatetimeUtil {

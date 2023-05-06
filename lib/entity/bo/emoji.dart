@@ -1,5 +1,5 @@
-import 'package:skye_utils/util/serialize/serializable.dart';
-import 'package:skye_utils/util/serialize/serialize_util.dart';
+import '../../util/serialize/serializable.dart';
+import '../../util/serialize/serialize_util.dart';
 
 class Emoji extends Serializable {
   //emoji name

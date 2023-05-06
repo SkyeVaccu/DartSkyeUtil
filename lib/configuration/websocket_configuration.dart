@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/object_util.dart';
+import '../util/object_util.dart';
 
 ///it's the websocket configuration
 class WebSocketConfiguration {

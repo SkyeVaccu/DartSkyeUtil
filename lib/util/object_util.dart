@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/serialize/serialize_util.dart';
+import '../util/serialize/serialize_util.dart';
 
 ///it's used to complete some judges
 class ObjectUtil {

@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/event_bus/bus_event_type.dart';
+import '../../util/event_bus/bus_event_type.dart';
 
 ///which is take in the event_bus
 class BusEvent {

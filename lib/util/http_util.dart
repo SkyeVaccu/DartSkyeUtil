@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:get/get_connect/http/src/response/response.dart';
-import 'package:skye_utils/configuration/http_configuration.dart';
+import '../configuration/http_configuration.dart';
 
 ///it's the util to handle the http
 class HttpUtil {

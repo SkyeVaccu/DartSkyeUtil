@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/sqlite/database_table.dart';
+import '../util/sqlite/database_table.dart';
 
 ///it's the configuration to identity the sqlite
 class SqliteConfiguration {

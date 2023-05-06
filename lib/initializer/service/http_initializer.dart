@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/configuration/http_configuration.dart';
-import 'package:skye_utils/initializer/initializer.dart';
-import 'package:skye_utils/util/http/http_client.dart';
+import '../../configuration/http_configuration.dart';
+import '../../initializer/initializer.dart';
+import '../../util/http/http_client.dart';
 
 ///it's the initializer which is used to initialize the http client
 class HttpInitializer extends Initializer {

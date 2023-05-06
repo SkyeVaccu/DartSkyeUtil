@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:skye_utils/util/serialize/serializable.dart';
+import '../../util/serialize/serializable.dart';
 
 ///it's the abstract http decoder to define an standard response decoder
 abstract class HttpDecoder {

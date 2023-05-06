@@ -1,15 +1,15 @@
 import 'dart:io';
 
-import 'package:skye_utils/util/logger_util.dart';
-import 'package:skye_utils/util/object_util.dart';
-import 'package:skye_utils/extension/string_extension.dart';
-import 'package:skye_utils/util/serialize/serialize_util.dart';
-import 'package:skye_utils/util/skye_table.dart';
-import 'package:skye_utils/util/timer_util.dart';
-import 'package:skye_utils/util/websocket/websocket_client_operator.dart';
-import 'package:skye_utils/util/websocket/websocket_client_receiver.dart';
-import 'package:skye_utils/util/websocket/websocket_client_sender.dart';
-import 'package:skye_utils/util/websocket/websocket_package.dart';
+import '../../util/logger_util.dart';
+import '../../util/object_util.dart';
+import '../../extension/string_extension.dart';
+import '../../util/serialize/serialize_util.dart';
+import '../../util/skye_table.dart';
+import '../../util/timer_util.dart';
+import '../../util/websocket/websocket_client_operator.dart';
+import '../../util/websocket/websocket_client_receiver.dart';
+import '../../util/websocket/websocket_client_sender.dart';
+import '../../util/websocket/websocket_package.dart';
 
 ///this is the websocket client object ,you can create an websocket client fast by this
 ///the ping and pong form is packaged into the WebSocket , you can see that class if you want the detail

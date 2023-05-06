@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:skye_utils/util/file/directory_type.dart';
-import 'package:skye_utils/util/isolate_util.dart';
-import 'package:skye_utils/util/serialize/serialize_util.dart';
+import '../../util/file/directory_type.dart';
+import '../../util/isolate_util.dart';
+import '../../util/serialize/serialize_util.dart';
 
 ///it's used to operate the file
 class FileUtil {

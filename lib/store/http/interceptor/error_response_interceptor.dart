@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
-import 'package:skye_utils/util/http/response_interceptor.dart';
-import 'package:skye_utils/util/logger_util.dart';
+import '../../../util/http/response_interceptor.dart';
+import '../../../util/logger_util.dart';
 
 ///it's the response interceptor , you can handle the response
 class ErrorInterceptor extends ResponseInterceptor {

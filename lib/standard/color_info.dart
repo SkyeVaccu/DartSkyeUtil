@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skye_utils/util/color/color_type.dart';
+import '../util/color/color_type.dart';
 
 /// ColorInfo which include all color we will use
 class ColorInfo {

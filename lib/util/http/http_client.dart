@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
-import 'package:skye_utils/util/http/async_decoder.dart';
-import 'package:skye_utils/util/http/http_decoder.dart';
-import 'package:skye_utils/util/http/request_interceptor.dart';
-import 'package:skye_utils/util/http/response_interceptor.dart';
-import 'package:skye_utils/util/http_util.dart';
-import 'package:skye_utils/util/logger_util.dart';
-import 'package:skye_utils/util/object_util.dart';
-import 'package:skye_utils/util/serialize/serializable.dart';
+import '../../util/http/async_decoder.dart';
+import '../../util/http/http_decoder.dart';
+import '../../util/http/request_interceptor.dart';
+import '../../util/http/response_interceptor.dart';
+import '../../util/http_util.dart';
+import '../../util/logger_util.dart';
+import '../../util/object_util.dart';
+import '../../util/serialize/serializable.dart';
 
 ///it's http client to send the http request
 class HttpClient extends GetConnect {

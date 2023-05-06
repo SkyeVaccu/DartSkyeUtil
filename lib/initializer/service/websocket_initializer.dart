@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/configuration/websocket_configuration.dart';
-import 'package:skye_utils/initializer/initializer.dart';
-import 'package:skye_utils/util/websocket/websocket_client.dart';
+import '../../configuration/websocket_configuration.dart';
+import '../../initializer/initializer.dart';
+import '../../util/websocket/websocket_client.dart';
 
 ///it's the initializer which is used to initialize the websocket client
 class WebSocketInitializer extends Initializer {

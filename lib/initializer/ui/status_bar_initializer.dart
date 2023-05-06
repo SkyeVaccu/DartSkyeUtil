@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:skye_utils/initializer/initializer.dart';
+import '../../initializer/initializer.dart';
 
 ///it's the initializer to initialize some ui
 class StatusBarInitializer implements Initializer {
