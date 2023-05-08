@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import '../util/serialize/serialize_util.dart';
@@ -33,7 +34,7 @@ class SharedPreferenceUtil {
   static void put(String key, dynamic value) {
     //if don't init the instance , it will init it and put the data
     if (_sharedPreferences == null) {
-      init().then((value) => value.setString(key, SerializeUtil.serialize(value) ?? ""));
+      init().then((sp) => sp.setString(key, SerializeUtil.serialize(value) ?? ""));
     } else {
       _sharedPreferences!.setString(key, SerializeUtil.serialize(value) ?? "");
     }
@@ -48,9 +49,9 @@ class SharedPreferenceUtil {
     if (_sharedPreferences == null) {
       if (targetObj != null) {
         return init()
-            .then((value) => SerializeUtil.deserialize(value.getString(key) ?? "", targetObj));
+            .then((sp) => SerializeUtil.deserialize(sp.getString(key) ?? "", targetObj));
       } else {
-        return init().then((value) => value.getString(key));
+        return init().then((value) => value.getString(key)!);
       }
     } else {
       if (targetObj != null) {
