@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class WidgetUtil {
   ///convert the widget to a Gauss background widget
   ///@return : the widget with Gauss background
-  Widget convertToGaussBlurWidget(Widget widget, {double sigmaX = 10, double sigmaY = 10}) {
+  static Widget convertToGaussBlurWidget(Widget widget, {double sigmaX = 10, double sigmaY = 10}) {
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: sigmaX, sigmaY: sigmaY),
       child: widget,
