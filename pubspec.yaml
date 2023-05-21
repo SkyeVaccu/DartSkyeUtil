@@ -20,6 +20,7 @@ dependencies:
   logger: ^1.1.0
   event_bus: ^2.0.0
   sqflite: ^2.2.2
+  permission_handler: ^10.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
