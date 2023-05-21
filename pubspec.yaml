@@ -21,6 +21,7 @@ dependencies:
   event_bus: ^2.0.0
   sqflite: ^2.2.2
   permission_handler: ^10.2.0
+  image_picker: ^0.8.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
