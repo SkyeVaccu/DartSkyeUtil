@@ -2,23 +2,12 @@
 class HttpConfiguration {
   //the prefix which in the front of the anonymous request path
   static const String AnonymousPrefix = "anony";
+
   //the prefix which in the front of the identity request path
   static const String IdentityPrefix = "user";
 
   //the active profile
   static _Profile currentProfile = _Profile.MOCK;
-
-  //the active baseUrl
-  static String baseUrl = () {
-    String protocol = _environment[currentProfile]![_RequestPart.PROTOCOL]!;
-    String host = _environment[currentProfile]![_RequestPart.HOST]!;
-    String port = _environment[currentProfile]![_RequestPart.PORT]!;
-    //handle the ":" problem
-    if (!port.startsWith("/")) {
-      port = ":$port";
-    }
-    return "$protocol://$host$port";
-  }();
 
   //the configuration of environment
   //if it isn't the mock environment, you must add the ':' before the port
@@ -42,6 +31,18 @@ class HttpConfiguration {
       _RequestPart.PORT: "10035",
     }
   };
+
+  //the active baseUrl
+  static String baseUrl = () {
+    String protocol = _environment[currentProfile]![_RequestPart.PROTOCOL]!;
+    String host = _environment[currentProfile]![_RequestPart.HOST]!;
+    String port = _environment[currentProfile]![_RequestPart.PORT]!;
+    //handle the ":" problem
+    if (!port.startsWith("/")) {
+      port = ":$port";
+    }
+    return "$protocol://$host$port";
+  }();
 }
 
 ///it's the profile of the application

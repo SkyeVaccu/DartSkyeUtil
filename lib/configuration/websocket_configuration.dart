@@ -4,26 +4,13 @@ import '../util/object_util.dart';
 class WebSocketConfiguration {
   //it's the websocket request prefix
   static const String _Prefix = "socket";
+
   //the interval between two ping messages
   static int hearBeatPeriod = 15;
+
   //the active profile
   static _Profile currentProfile = _Profile.DEVELOPMENT;
 
-  //the active baseUrl
-  static String baseUrl = () {
-    String protocol = _environment[currentProfile]![_RequestPart.PROTOCOL]!;
-    String host = _environment[currentProfile]![_RequestPart.HOST]!;
-    String port = _environment[currentProfile]![_RequestPart.PORT]!;
-    //handle the ":" problem
-    if (!port.startsWith("/")) {
-      port = ":$port";
-    }
-    if (ObjectUtil.isNotEmpty(_Prefix)) {
-      return "$protocol://$host$port/$_Prefix";
-    } else {
-      return "$protocol://$host$port";
-    }
-  }();
   //the configuration of environment
   //if it isn't the mock environment, you must add the ':' before the port
   static final Map<_Profile, Map<_RequestPart, String>> _environment = {
@@ -40,6 +27,22 @@ class WebSocketConfiguration {
       _RequestPart.PORT: "10035",
     }
   };
+
+  //the active baseUrl
+  static String baseUrl = () {
+    String protocol = _environment[currentProfile]![_RequestPart.PROTOCOL]!;
+    String host = _environment[currentProfile]![_RequestPart.HOST]!;
+    String port = _environment[currentProfile]![_RequestPart.PORT]!;
+    //handle the ":" problem
+    if (!port.startsWith("/")) {
+      port = ":$port";
+    }
+    if (ObjectUtil.isNotEmpty(_Prefix)) {
+      return "$protocol://$host$port/$_Prefix";
+    } else {
+      return "$protocol://$host$port";
+    }
+  }();
 }
 
 ///it's the profile of the application
