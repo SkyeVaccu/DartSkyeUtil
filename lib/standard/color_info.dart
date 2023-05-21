@@ -6,12 +6,20 @@ class ColorInfo {
   ///the adapt color map ,every one should include the light color and dark color
   static const Map<AdaptColorType, Map<ColorEnvironment, Color>> adaptColorMap = {
     AdaptColorType.ThemeColor: {
-      ColorEnvironment.Light: Color.fromARGB(255, 98, 140, 182),
-      ColorEnvironment.Dark: Color.fromARGB(255, 88, 132, 177),
+      ColorEnvironment.Light: Color.fromARGB(255, 48, 135, 191),
+      ColorEnvironment.Dark: Color.fromARGB(255, 29, 114, 186),
+    },
+    AdaptColorType.SecondThemeColor: {
+      ColorEnvironment.Light: Color.fromARGB(255, 30, 57, 198),
+      ColorEnvironment.Dark: Color.fromARGB(255, 45, 71, 203),
     },
     AdaptColorType.BackgroundColor: {
       ColorEnvironment.Light: Colors.white,
       ColorEnvironment.Dark: Color.fromARGB(255, 52, 52, 52),
+    },
+    AdaptColorType.PromptColor: {
+      ColorEnvironment.Light: Color.fromARGB(255, 59, 59, 59),
+      ColorEnvironment.Dark: Color.fromARGB(255, 141, 141, 141),
     },
     AdaptColorType.ForegroundColor: {
       ColorEnvironment.Light: Colors.black54,
@@ -19,15 +27,19 @@ class ColorInfo {
     },
     AdaptColorType.FirstTextColor: {
       ColorEnvironment.Light: Colors.black45,
-      ColorEnvironment.Dark: Color.fromARGB(180, 255, 255, 255),
+      ColorEnvironment.Dark: Colors.white,
     },
-    AdaptColorType.SecondTextColor: {
-      ColorEnvironment.Light: Colors.black45,
-      ColorEnvironment.Dark: Color.fromARGB(180, 255, 255, 255),
+    AdaptColorType.SuccessColor: {
+      ColorEnvironment.Light: Color.fromARGB(255, 54, 114, 61),
+      ColorEnvironment.Dark: Color.fromARGB(255, 83, 158, 92),
     },
-    AdaptColorType.ForegroundTextColor: {
-      ColorEnvironment.Light: Colors.white,
-      ColorEnvironment.Dark: Colors.black45,
+    AdaptColorType.WarningColor: {
+      ColorEnvironment.Light: Color.fromARGB(255, 179, 142, 51),
+      ColorEnvironment.Dark: Color.fromARGB(255, 212, 169, 12),
+    },
+    AdaptColorType.ErrorColor: {
+      ColorEnvironment.Light: Color.fromARGB(255, 219, 24, 24),
+      ColorEnvironment.Dark: Color.fromARGB(255, 217, 7, 24),
     },
   };
 

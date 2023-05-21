@@ -3,8 +3,14 @@ enum AdaptColorType {
   /// the main theme color in the application
   ThemeColor,
 
+  /// second theme color in the application
+  SecondThemeColor,
+
   /// the background color in the application
   BackgroundColor,
+
+  /// the prompt color in the application
+  PromptColor,
 
   /// the foreground color in the application
   ForegroundColor,
@@ -12,11 +18,14 @@ enum AdaptColorType {
   /// the first text color in the application
   FirstTextColor,
 
-  /// the second text color in the application
-  SecondTextColor,
+  /// the success color in the application
+  SuccessColor,
 
-  /// the foreground text color in the application
-  ForegroundTextColor,
+  /// the warning color in the application
+  WarningColor,
+
+  /// the error color in the application
+  ErrorColor,
 }
 
 ///the color environment
