@@ -11,7 +11,7 @@ class HttpUtil {
   /// @param isAnonymous : whether the request path is anonymous
   /// @return : the joined request path
   static String join(String apiPrefix, String requestPath, {bool isAnonymous = false}) {
-    return "/${isAnonymous ? HttpConfiguration.AnonymousPrefix : HttpConfiguration.IdentityPrefix}/$apiPrefix/$requestPath";
+    return "/${isAnonymous ? HttpConfiguration.instance.anonymousPrefix : HttpConfiguration.instance.identityPrefix}/$apiPrefix/$requestPath";
   }
 
   ///get the bodyString from the response

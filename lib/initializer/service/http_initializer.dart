@@ -10,7 +10,7 @@ class HttpInitializer extends Initializer {
   void init(BuildContext context) {
     //create the http client and init it
     //because it extends the GetConnect ,so it will init when the Get init
-    HttpClient httpClient = HttpClient.uriBuilder(uri: HttpConfiguration.baseUrl);
+    HttpClient httpClient = HttpClient.uriBuilder(uri: HttpConfiguration.instance.baseUrl);
     //put it into the Get container
     Get.put(httpClient);
   }

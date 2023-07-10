@@ -11,7 +11,7 @@ class TokenInterceptor extends RequestInterceptor {
   ///@return : the handled request object
   @override
   FutureOr<Request> intercept(Request request) {
-    if (!request.url.path.contains("/${HttpConfiguration.AnonymousPrefix}")) {
+    if (!request.url.path.contains("/${HttpConfiguration.instance.anonymousPrefix}")) {
       //TODO get the token from the cache or request the token
       //TODO append the token info to the header like the following code
       // request.headers["Authorization"] = "Bearer " + "token";

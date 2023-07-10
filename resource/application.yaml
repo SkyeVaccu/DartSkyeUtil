@@ -1,0 +1,16 @@
+http:
+  activeProfile: MOCK
+  anonymousPrefix: anony
+  identityPrefix: user
+  mock:
+    protocol: https
+    host: console-mock.apipost.cn
+    port: /app/mock/project/8deeb012-ac45-46b5-c0f1
+  local:
+    protocol: http
+    host: 10.2.2.2
+    port: 10035
+  development:
+    protocol: http
+    host: vaccum.ltd
+    port: 10035

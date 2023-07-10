@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
+import '../system/yaml_parser.dart';
 import '../configuration/initializer_configuration.dart';
 import '../configuration/language_configuration.dart';
 import '../configuration/route_configuration.dart';
@@ -19,10 +20,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //call all initializer
-    for (var initializer in InitializerConfiguration.initializerList) {
-      initializer.init(context);
-    }
+    // parse the yaml and change the configuration
+    YamlParser.parse().then((_) {
+      //call all initializer
+      for (var initializer in InitializerConfiguration.initializerList) {
+        initializer.init(context);
+      }
+    });
     //create the GetMaterial App
     return GetMaterialApp(
         //set the default light theme
