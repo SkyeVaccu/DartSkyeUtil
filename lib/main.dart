@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import '../system/yaml_parser.dart';
+import 'system/yaml_configuration/yaml_parser.dart';
 import '../configuration/initializer_configuration.dart';
 import '../configuration/language_configuration.dart';
 import '../configuration/route_configuration.dart';
