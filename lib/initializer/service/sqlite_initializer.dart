@@ -1,10 +1,11 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import '../../system/yaml_configuration/yaml_parser.dart';
-import '../../system/yaml_configuration/YamlConfiguration.dart';
-import '../../util/cache_util.dart';
-import '../../configuration/sqlite_configuration.dart';
+
+import '../../configuration/auto_configuration/sqlite_configuration.dart';
 import '../../initializer/initializer.dart';
+import '../../system/yaml/yaml_configuration.dart';
+import '../../system/yaml/yaml_parser.dart';
+import '../../util/cache_util.dart';
 import '../../util/sqlite/custom_database.dart';
 
 ///it's the initializer which is used to initialize the sqlite database

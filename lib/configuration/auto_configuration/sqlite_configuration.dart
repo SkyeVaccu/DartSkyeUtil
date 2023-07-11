@@ -1,11 +1,10 @@
-import '../util/sqlite/sqlite_util.dart';
 import 'package:yaml/yaml.dart';
 
-import '../system/yaml_configuration/YamlConfiguration.dart';
-import '../util/cache_util.dart';
-
-import '../util/sqlite/database_table.dart';
-import '../util/sqlite/sqlite_data_type.dart';
+import '../../system/yaml/yaml_configuration.dart';
+import '../../util/cache_util.dart';
+import '../../util/sqlite/database_table.dart';
+import '../../util/sqlite/sqlite_data_type.dart';
+import '../../util/sqlite/sqlite_util.dart';
 
 ///it's the configuration to identity the sqlite
 class SqliteConfiguration {

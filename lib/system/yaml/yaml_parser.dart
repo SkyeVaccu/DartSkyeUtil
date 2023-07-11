@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
-import 'YamlConfiguration.dart';
-import '../../util/cache_util.dart';
 import 'package:yaml/yaml.dart';
+
+import 'yaml_configuration.dart';
 
 /// it's the yaml global configuration parser, it can parse the yaml configuration
 class YamlParser {

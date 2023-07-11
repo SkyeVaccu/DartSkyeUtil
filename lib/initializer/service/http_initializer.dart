@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import '../../system/yaml_configuration/YamlConfiguration.dart';
-import '../../util/cache_util.dart';
-import 'package:yaml/yaml.dart';
-import '../../configuration/http_configuration.dart';
+
+import '../../configuration/auto_configuration/http_configuration.dart';
 import '../../initializer/initializer.dart';
+import '../../system/yaml/yaml_configuration.dart';
+import '../../util/cache_util.dart';
 import '../../util/http/http_client.dart';
 
 ///it's the initializer which is used to initialize the http client

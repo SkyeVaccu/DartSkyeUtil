@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:get/get_connect/http/src/response/response.dart';
-import '../configuration/http_configuration.dart';
+
+import '../configuration/auto_configuration/http_configuration.dart';
 
 ///it's the util to handle the http
 class HttpUtil {

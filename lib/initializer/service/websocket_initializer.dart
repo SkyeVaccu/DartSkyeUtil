@@ -1,8 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import '../../configuration/websocket_configuration.dart';
+
+import '../../configuration/auto_configuration/websocket_configuration.dart';
 import '../../initializer/initializer.dart';
-import '../../system/yaml_configuration/YamlConfiguration.dart';
+import '../../system/yaml/yaml_configuration.dart';
 import '../../util/cache_util.dart';
 import '../../util/websocket/websocket_client.dart';
 

@@ -1,6 +1,5 @@
-import '../system/yaml_configuration/YamlConfiguration.dart';
-
-import '../util/cache_util.dart';
+import '../../system/yaml/yaml_configuration.dart';
+import '../../util/cache_util.dart';
 
 ///it's the configuration to config the http request
 class HttpConfiguration {

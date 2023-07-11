@@ -1,7 +1,6 @@
-import '../system/yaml_configuration/YamlConfiguration.dart';
-import '../util/cache_util.dart';
-
-import '../util/object_util.dart';
+import '../../system/yaml/yaml_configuration.dart';
+import '../../util/cache_util.dart';
+import '../../util/object_util.dart';
 
 ///it's the websocket configuration
 class WebSocketConfiguration {
