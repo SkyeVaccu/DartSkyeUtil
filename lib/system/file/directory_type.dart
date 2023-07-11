@@ -35,7 +35,7 @@ enum DirectoryType {
   ExternalStorageDocumentDirectory
 }
 
-///the extension on the DirectoryType
+///the class_extension on the DirectoryType
 extension DirectoryTypeExtension on DirectoryType {
   //get the directory
   Future<dynamic> get info => [
@@ -53,21 +53,21 @@ extension DirectoryTypeExtension on DirectoryType {
 }
 
 /// the directory info
-class _DirectoryInfo{
+class _DirectoryInfo {
   static final Future<Directory> applicationCacheDirectory = getTemporaryDirectory();
   static final Future<Directory> applicationFileDirectory = getApplicationSupportDirectory();
   static final Future<Directory> applicationDocumentsDirectory = getApplicationDocumentsDirectory();
   static final Future<List<Directory>?> externalStorageCacheDirectory =
-  getExternalCacheDirectories();
+      getExternalCacheDirectories();
   static final Future<Directory?> externalStorageFileDirectory = getExternalStorageDirectory();
   static final Future<List<Directory>?> externalStorageMusicDirectory =
-  getExternalStorageDirectories(type: StorageDirectory.music);
+      getExternalStorageDirectories(type: StorageDirectory.music);
   static final Future<List<Directory>?> externalStoragePictureDirectory =
-  getExternalStorageDirectories(type: StorageDirectory.pictures);
+      getExternalStorageDirectories(type: StorageDirectory.pictures);
   static final Future<List<Directory>?> externalStorageMovieDirectory =
-  getExternalStorageDirectories(type: StorageDirectory.movies);
+      getExternalStorageDirectories(type: StorageDirectory.movies);
   static final Future<List<Directory>?> externalStorageDownloadDirectory =
-  getExternalStorageDirectories(type: StorageDirectory.downloads);
+      getExternalStorageDirectories(type: StorageDirectory.downloads);
   static final Future<List<Directory>?> externalStorageDocumentDirectory =
-  getExternalStorageDirectories(type: StorageDirectory.documents);
+      getExternalStorageDirectories(type: StorageDirectory.documents);
 }

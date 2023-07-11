@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-///map extension
+///map class_extension
 extension MapExtension<Q, P> on Map<Q, P> {
   ///traverse the map to create a widget list
   ///Note: you should avoid to use the function to create the listView in the children attribute, it will violate the sliver model ,

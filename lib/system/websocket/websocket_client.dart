@@ -1,7 +1,7 @@
 import 'dart:io';
 
+import '../../expand/class_extension/string_extension.dart';
 import '../../expand/data_structure/skye_table.dart';
-import '../../extension/string_extension.dart';
 import '../../system/websocket/websocket_client_operator.dart';
 import '../../system/websocket/websocket_client_receiver.dart';
 import '../../system/websocket/websocket_client_sender.dart';

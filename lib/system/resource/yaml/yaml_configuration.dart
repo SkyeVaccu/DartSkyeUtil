@@ -9,7 +9,7 @@ class YamlConfiguration {
   YamlConfiguration(this.globalYamlConfiguration);
 }
 
-/// the extension class which is used to get the str straightly
+/// the class_extension class which is used to get the str straightly
 extension GlobalConfigurationExtension on YamlConfiguration {
   /// overloading the []
   dynamic operator [](String key) {

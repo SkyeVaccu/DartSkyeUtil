@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:sqflite/sqflite.dart' as sqlite;
 import 'package:sqflite/sqlite_api.dart';
 
-import '../../extension/string_extension.dart';
+import '../../expand/class_extension/string_extension.dart';
 import '../../system/sqlite/database_table.dart';
 import '../../system/sqlite/sqlite_data_type.dart';
 import '../../util/logger_util.dart';

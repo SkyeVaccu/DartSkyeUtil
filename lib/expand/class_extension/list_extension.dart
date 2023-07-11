@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-///list extension
+///list class_extension
 extension ListExtension<E> on List<E> {
   ///create the list which filled with the widget by the input function
   ///Note: you should avoid to use the function to create the listView in the children attribute, it will violate the sliver model ,
@@ -63,7 +63,7 @@ extension ListExtension<E> on List<E> {
     return this;
   }
 
-  ///this extension method is used to complete the chain operation easily,
+  ///this class_extension method is used to complete the chain operation easily,
   ///you can operate the list in the function. if you return nothing ,then it will return the list ,
   ///otherwise it will use the return value
   ///@param operateFunction : the handle function

@@ -10,7 +10,7 @@ enum SqliteDataType {
   BLOB,
 }
 
-///it's the extension of the sqliteType assigns to the type
+///it's the class_extension of the sqliteType assigns to the type
 extension SqliteDataTypeExtension on SqliteDataType {
   String get info => [
         "TEXT",

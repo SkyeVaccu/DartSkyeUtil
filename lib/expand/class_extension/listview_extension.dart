@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-///the ListView extension
+///the ListView class_extension
 extension ListViewExtension on ListView {
   ///remove the listview overScroll effect which will create the bad influence
   ///@return : the list without the overscroll effect

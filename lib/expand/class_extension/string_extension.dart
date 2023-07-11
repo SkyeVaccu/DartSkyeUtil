@@ -1,4 +1,4 @@
-///the extension on the String, to add the method
+///the class_extension on the String, to add the method
 extension StringExtension on String {
   ///judge whether it pass the regExp
   ///@param regExpStr: the regular expression

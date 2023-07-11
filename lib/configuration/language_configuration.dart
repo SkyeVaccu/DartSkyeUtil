@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import '../extension/list_extension.dart';
+
+import '../expand/class_extension/list_extension.dart';
 
 ///it's use to register all i18n file
 class LanguageConfiguration extends Translations {

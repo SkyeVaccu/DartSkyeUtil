@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../util/object_util.dart';
 
-/// it's the extension of the widget
+import '../../util/object_util.dart';
+
+/// it's the class_extension of the widget
 extension WidgetExtension on Widget {
   ///handle the situation when the state is null
   ///@param state : judge state
