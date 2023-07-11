@@ -1,6 +1,6 @@
 import 'package:image_picker/image_picker.dart';
 
-class ImageUtil {
+class Camera {
   /// the ImagePicker singleton instance
   static final ImagePicker _imagePicker = ImagePicker();
 

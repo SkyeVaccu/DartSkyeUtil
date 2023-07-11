@@ -1,13 +1,14 @@
 import 'package:flutter/widgets.dart';
-import '../../util/logger_util.dart';
-import '../../util/object_util.dart';
-import '../../util/serialize/serializable.dart';
-import '../../util/serialize/serialize_util.dart';
-import '../../util/sqlite/database_table.dart';
-import '../../util/sqlite/sqlite_data_type.dart';
 import 'package:sqflite/sqflite.dart' as sqlite;
 import 'package:sqflite/sqlite_api.dart';
+
 import '../../extension/string_extension.dart';
+import '../../system/sqlite/database_table.dart';
+import '../../system/sqlite/sqlite_data_type.dart';
+import '../../util/logger_util.dart';
+import '../../util/object_util.dart';
+import '../../util/service/serialize/serializable.dart';
+import '../../util/service/serialize/serialize_util.dart';
 
 ///the custom database
 class CustomDatabase {

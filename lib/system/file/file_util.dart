@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import '../../util/file/directory_type.dart';
-import '../../util/isolate_util.dart';
-import '../../util/serialize/serialize_util.dart';
+import '../../system/file/directory_type.dart';
+import '../../util/service/isolate_util.dart';
+import '../../util/service/serialize/serialize_util.dart';
 
 ///it's used to operate the file
 class FileUtil {

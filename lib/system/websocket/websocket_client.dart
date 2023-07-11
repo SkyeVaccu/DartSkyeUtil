@@ -1,15 +1,15 @@
 import 'dart:io';
 
+import '../../expand/data_structure/skye_table.dart';
+import '../../extension/string_extension.dart';
+import '../../system/websocket/websocket_client_operator.dart';
+import '../../system/websocket/websocket_client_receiver.dart';
+import '../../system/websocket/websocket_client_sender.dart';
+import '../../system/websocket/websocket_package.dart';
 import '../../util/logger_util.dart';
 import '../../util/object_util.dart';
-import '../../extension/string_extension.dart';
-import '../../util/serialize/serialize_util.dart';
-import '../../util/skye_table.dart';
+import '../../util/service/serialize/serialize_util.dart';
 import '../../util/timer_util.dart';
-import '../../util/websocket/websocket_client_operator.dart';
-import '../../util/websocket/websocket_client_receiver.dart';
-import '../../util/websocket/websocket_client_sender.dart';
-import '../../util/websocket/websocket_package.dart';
 
 ///this is the websocket client object ,you can create an websocket client fast by this
 ///the ping and pong form is packaged into the WebSocket , you can see that class if you want the detail
@@ -18,34 +18,49 @@ import '../../util/websocket/websocket_package.dart';
 class WebSocketClient {
   //websocket server host
   String? host;
+
   //websocket server port
   String? port;
+
   //websocket server connection uri
   String? uri;
+
   //the websocket protocol
   String protocol;
+
   //ping and pong ,heart beat period, default value is 15
   int heartBeatPeriod;
+
   //reconnected threshold ,if the time pass the value ,we will started to reconnected
   int notResponseThreshold;
+
   //the uri param after the url
   Map<String, String>? urlParams;
+
   //the params in the headers
   Map<String, String>? openParams;
+
   //listener the open event
   void Function()? openListener;
+
   //listener the message event
   void Function(String)? messageListener;
+
   //listener the close event
   void Function()? closeListener;
+
   //listener the error event
   void Function(Exception)? errorListener;
+
   //the true WebSocket object
   WebSocket? _webSocket;
+
   //the status of the websocket client
   WebSocketClientStatus webSocketClientStatus = WebSocketClientStatus.WAIT;
+
   //it's the table store all receivers
   final SkyeTable<String, String, List<WebSocketClientReceiver>> _receiverTable = SkyeTable();
+
   //it's the table store all senders
   ///the builder which is used to build an WebSocketClient Object by host and port, it will use "ws" protocol
   WebSocketClient.signBuilder({

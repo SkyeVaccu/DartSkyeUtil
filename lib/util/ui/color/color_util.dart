@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../standard/color_info.dart';
-import '../../util/color/color_type.dart';
-import '../../util/number_util.dart';
+
+import '../../../standard/color_info.dart';
+import '../../number_util.dart';
+import 'color_type.dart';
 
 ///the util is used to get the correct color
 class ColorUtil {

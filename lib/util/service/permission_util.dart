@@ -1,6 +1,6 @@
 import 'package:permission_handler/permission_handler.dart';
 
-import 'logger_util.dart';
+import '../logger_util.dart';
 
 class PermissionUtil {
   ///request the single permission

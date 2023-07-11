@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:get/get_connect/http/src/request/request.dart';
 
 import '../../../configuration/auto_configuration/http_configuration.dart';
-import '../../../util/http/request_interceptor.dart';
+import '../../../system/http/request_interceptor.dart';
 
 ///it's the request interceptor ,you can define the handler to handle the token before sending the request
 class TokenInterceptor extends RequestInterceptor {

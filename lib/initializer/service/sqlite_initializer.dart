@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 
 import '../../configuration/auto_configuration/sqlite_configuration.dart';
 import '../../initializer/initializer.dart';
-import '../../system/yaml/yaml_configuration.dart';
-import '../../system/yaml/yaml_parser.dart';
+import '../../system/resource/yaml/yaml_configuration.dart';
+import '../../system/resource/yaml/yaml_parser.dart';
+import '../../system/sqlite/custom_database.dart';
 import '../../util/cache_util.dart';
-import '../../util/sqlite/custom_database.dart';
 import '../initializer_enhance.dart';
 
 ///it's the initializer which is used to initialize the sqlite database

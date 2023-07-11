@@ -9,7 +9,7 @@ class FontInfo {
   static final double fourthTitleSP = 46.sp;
   static final double fifthTitleSP = 43.sp;
 
-  // it's the default text fontsize
+  // it's the default text font size
   static final double standardTextSP = 43.sp;
 
   //the following sp will be used in the dialog

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../configuration/auto_configuration/websocket_configuration.dart';
 import '../../initializer/initializer.dart';
-import '../../util/websocket/websocket_client.dart';
+import '../../system/websocket/websocket_client.dart';
 import '../initializer_enhance.dart';
 
 ///it's the initializer which is used to initialize the websocket client

@@ -1,4 +1,4 @@
-import '../../util/websocket/websocket_client.dart';
+import '../../system/websocket/websocket_client.dart';
 
 ///the most top websocket client form
 abstract class WebSocketClientOperator {

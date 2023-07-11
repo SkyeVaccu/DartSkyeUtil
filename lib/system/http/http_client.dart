@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
 
 import '../../configuration/auto_configuration/http_configuration.dart';
-import '../../util/http/async_decoder.dart';
-import '../../util/http/http_decoder.dart';
-import '../../util/http/request_interceptor.dart';
-import '../../util/http/response_interceptor.dart';
+import '../../system/http/async_decoder.dart';
+import '../../system/http/http_decoder.dart';
+import '../../system/http/request_interceptor.dart';
+import '../../system/http/response_interceptor.dart';
 import '../../util/logger_util.dart';
 import '../../util/object_util.dart';
-import '../../util/serialize/serializable.dart';
+import '../../util/service/serialize/serializable.dart';
 
 ///it's http client to send the http request
 class HttpClient extends GetConnect {

@@ -1,5 +1,5 @@
-import '../../util/websocket/websocket_client_operator.dart';
-import '../../util/websocket/websocket_package.dart';
+import '../../system/websocket/websocket_client_operator.dart';
+import '../../system/websocket/websocket_package.dart';
 
 ///it's the abstract WebSocketClientSender to standard the sender
 abstract class WebSocketClientSender extends WebSocketClientOperator {

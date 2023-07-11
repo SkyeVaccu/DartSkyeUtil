@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import '../../util/serialize/serializable.dart';
+import '../../util/service/serialize/serializable.dart';
 
 ///it's the abstract http decoder to define an standard response decoder
 abstract class HttpDecoder {

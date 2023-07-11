@@ -1,4 +1,4 @@
-import '../system/yaml/yaml_configuration.dart';
+import '../system/resource/yaml/yaml_configuration.dart';
 import '../util/cache_util.dart';
 
 /// it's the enhanced mixin which can help you to check the configuration

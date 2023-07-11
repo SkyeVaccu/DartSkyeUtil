@@ -1,22 +1,29 @@
-import '../../util/serialize/serializable.dart';
-import '../../util/serialize/serialize_util.dart';
+import '../../util/service/serialize/serializable.dart';
+import '../../util/service/serialize/serialize_util.dart';
 
 ///it's the form of info in the websocket communication
 class WebSocketPackage extends Serializable {
   // id of the message , it's the primary key
   String? id;
+
   // if this message is the response of the message, the responseId will be the id of the corresponding message
   String? responseId;
+
   // the content of the websocket package
   dynamic content;
+
   // the date when the message is sent
   int? time;
+
   // the loop to the package
   String? loop;
+
   //the subject to the package
   String? subject;
+
   // the type of the webSocket message, because dart can't convert the enum type to string,so we must use string here
   String? webSocketPackageType;
+
   // the content in the message
   Map<String, dynamic>? additionalInfos;
 
@@ -71,6 +78,7 @@ class WebSocketPackage extends Serializable {
 class WebSocketPackageType {
   // request package
   static const String REQUEST = "REQUEST";
+
   // response package
   static const String RESPONSE = "RESPONSE";
 }

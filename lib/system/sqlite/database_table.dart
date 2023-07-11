@@ -1,4 +1,4 @@
-import '../../util/sqlite/sqlite_data_type.dart';
+import '../../system/sqlite/sqlite_data_type.dart';
 
 ///it's used to identify an table in the database
 class DatabaseTable {

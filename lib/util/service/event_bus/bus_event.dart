@@ -1,4 +1,4 @@
-import '../../util/event_bus/bus_event_type.dart';
+import 'bus_event_type.dart';
 
 ///which is take in the event_bus
 class BusEvent {

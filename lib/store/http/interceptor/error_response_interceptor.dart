@@ -1,7 +1,9 @@
 import 'dart:async';
+
 import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
-import '../../../util/http/response_interceptor.dart';
+
+import '../../../system/http/response_interceptor.dart';
 import '../../../util/logger_util.dart';
 
 ///it's the response interceptor , you can handle the response

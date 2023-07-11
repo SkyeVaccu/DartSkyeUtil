@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import '../util/color/color_type.dart';
+
+import '../util/ui/color/color_type.dart';
 
 /// ColorInfo which include all color we will use
 class ColorInfo {
   ///the adapt color map ,every one should include the light color and dark color
   static const Map<AdaptColorType, Map<ColorEnvironment, Color>> adaptColorMap = {
     AdaptColorType.ThemeColor: {
-      ColorEnvironment.Light: Color.fromARGB(255, 48, 135, 191),
-      ColorEnvironment.Dark: Color.fromARGB(255, 29, 114, 186),
+      ColorEnvironment.Light: Color.fromARGB(255, 53, 157, 224),
+      ColorEnvironment.Dark: Color.fromARGB(255, 24, 102, 168),
     },
     AdaptColorType.SecondThemeColor: {
-      ColorEnvironment.Light: Color.fromARGB(255, 30, 57, 198),
-      ColorEnvironment.Dark: Color.fromARGB(255, 45, 71, 203),
+      ColorEnvironment.Light: Color.fromARGB(255, 43, 80, 189),
+      ColorEnvironment.Dark: Color.fromARGB(255, 47, 68, 175),
     },
     AdaptColorType.BackgroundColor: {
       ColorEnvironment.Light: Colors.white,

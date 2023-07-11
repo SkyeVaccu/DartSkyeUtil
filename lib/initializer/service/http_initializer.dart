@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../configuration/auto_configuration/http_configuration.dart';
 import '../../initializer/initializer.dart';
-import '../../util/http/http_client.dart';
+import '../../system/http/http_client.dart';
 import '../initializer_enhance.dart';
 
 ///it's the initializer which is used to initialize the http client

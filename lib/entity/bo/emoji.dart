@@ -1,13 +1,16 @@
-import '../../util/serialize/serializable.dart';
-import '../../util/serialize/serialize_util.dart';
+import '../../util/service/serialize/serializable.dart';
+import '../../util/service/serialize/serialize_util.dart';
 
 class Emoji extends Serializable {
   //emoji name
   String? name;
+
   //emoji keyword
   List<String>? keywords;
+
   //emoji char
   String? char;
+
   //parent category
   String? category;
 

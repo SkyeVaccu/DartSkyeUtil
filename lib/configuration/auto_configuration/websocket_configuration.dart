@@ -1,4 +1,4 @@
-import '../../system/yaml/yaml_configuration.dart';
+import '../../system/resource/yaml/yaml_configuration.dart';
 import '../../util/cache_util.dart';
 import '../../util/object_util.dart';
 

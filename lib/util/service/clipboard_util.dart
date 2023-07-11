@@ -9,7 +9,7 @@ class ClipboardUtil {
   }
 
   ///read the data from Clipboard
-  ///@return: the lastest string in the clipboard
+  ///@return: the last string in the clipboard
   static Future<String?> get() async {
     return (await Clipboard.getData(Clipboard.kTextPlain))?.text;
   }

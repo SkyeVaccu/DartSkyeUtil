@@ -1,6 +1,7 @@
 import 'package:event_bus/event_bus.dart';
-import '../../util/event_bus/bus_event.dart';
-import '../../util/event_bus/bus_event_type.dart';
+
+import 'bus_event.dart';
+import 'bus_event_type.dart';
 
 ///event bus class which is used to do some operation across uncorrelated page
 class EventBusUtil {

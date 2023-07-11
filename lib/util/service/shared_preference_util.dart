@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import '../util/serialize/serialize_util.dart';
+
+import 'serialize/serialize_util.dart';
 
 /// this class is used to store all cache data into the cache xml file
 /// the directory path is '/data/user/0/<package name>/shared_prefs/'
@@ -48,8 +48,7 @@ class SharedPreferenceUtil {
     //if don't init the instance , it will init it and get the data
     if (_sharedPreferences == null) {
       if (targetObj != null) {
-        return init()
-            .then((sp) => SerializeUtil.deserialize(sp.getString(key) ?? "", targetObj));
+        return init().then((sp) => SerializeUtil.deserialize(sp.getString(key) ?? "", targetObj));
       } else {
         return init().then((value) => value.getString(key)!);
       }

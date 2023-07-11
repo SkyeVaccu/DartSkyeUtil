@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
-import '../../util/http/http_decoder.dart';
-import '../../util/isolate_util.dart';
+import '../../system/http/http_decoder.dart';
 import '../../util/logger_util.dart';
 import '../../util/object_util.dart';
-import '../../util/serialize/serializable.dart';
-import '../../util/serialize/serialize_util.dart';
+import '../../util/service/isolate_util.dart';
+import '../../util/service/serialize/serializable.dart';
+import '../../util/service/serialize/serialize_util.dart';
 
 /// it's the decoder which is used to decode the response json
 class AsyncDecoder implements HttpDecoder {

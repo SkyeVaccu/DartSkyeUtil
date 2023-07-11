@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../../util/serialize/serializable.dart';
+import 'serializable.dart';
 
 /// the class which handle the serialize thing, like serializing or deserializing
 class SerializeUtil {
