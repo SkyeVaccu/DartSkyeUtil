@@ -1,5 +1,6 @@
 http:
-  activeProfile: MOCK
+  status: true
+  activeProfile: mock
   anonymousPrefix: anony
   identityPrefix: user
   mock:
@@ -14,3 +15,16 @@ http:
     protocol: http
     host: vaccum.ltd
     port: 10035
+websocket:
+  status: true
+  identityPrefix: socket
+  heartBeatPeriod: 15
+  activeProfile: development
+  local:
+    protocol: ws
+    host: 10.0.2.2
+    port: 10035
+  development:
+    protocol: ws
+    host: console-mock.apipost.cn
+    port: /app/mock/project/8deeb012-ac45-46b5-c0f1-e4cab750ddf0

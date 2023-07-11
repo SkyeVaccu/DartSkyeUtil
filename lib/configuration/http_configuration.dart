@@ -1,24 +1,24 @@
 import '../system/yaml_configuration/GlobalConfiguration.dart';
 
 import '../util/cache_util.dart';
-import '../util/logger_util.dart';
 
 ///it's the configuration to config the http request
 class HttpConfiguration {
-  late GlobalConfiguration configuration;
   late String anonymousPrefix;
   late String identityPrefix;
   late String baseUrl;
 
+  // the instance
   static late HttpConfiguration instance;
 
+  // the method which is used to get instance
   static HttpConfiguration getInstance() {
     instance = HttpConfiguration._();
     return instance;
   }
 
   HttpConfiguration._() {
-    configuration = CacheUtil.get("GlobalConfiguration");
+    GlobalConfiguration configuration = CacheUtil.get("GlobalConfiguration");
     //the prefix which in the front of the anonymous request path
     anonymousPrefix = configuration["http.anonymousPrefix"] ?? "annoy";
     //the prefix which in the front of the identity request path
