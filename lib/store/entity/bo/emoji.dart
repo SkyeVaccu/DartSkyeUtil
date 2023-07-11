@@ -1,5 +1,5 @@
-import '../../util/service/serialize/serializable.dart';
-import '../../util/service/serialize/serialize_util.dart';
+import '../../../util/service/serialize/serializable.dart';
+import '../../../util/service/serialize/serialize_util.dart';
 
 class Emoji extends Serializable {
   //emoji name
