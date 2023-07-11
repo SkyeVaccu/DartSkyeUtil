@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
+
+import '../../configuration/auto_configuration/http_configuration.dart';
 import '../../util/http/async_decoder.dart';
 import '../../util/http/http_decoder.dart';
 import '../../util/http/request_interceptor.dart';
 import '../../util/http/response_interceptor.dart';
-import '../../util/http_util.dart';
 import '../../util/logger_util.dart';
 import '../../util/object_util.dart';
 import '../../util/serialize/serializable.dart';
@@ -15,16 +16,22 @@ import '../../util/serialize/serializable.dart';
 class HttpClient extends GetConnect {
   //the sever host
   String? host;
+
   //the sever port
   String? port;
+
   //the sever connection uri
   String? uri;
+
   //the http protocol
   String protocol;
+
   //the request interceptor list
   List<RequestInterceptor>? requestInterceptorList;
+
   //the response interceptor list
   List<ResponseInterceptor>? responseInterceptorList;
+
   //the response decoder which is used to decode the raw response string
   HttpDecoder? httpDecoder;
 
@@ -107,8 +114,7 @@ class HttpClient extends GetConnect {
     Map<String, String>? headers,
     String? contentType,
   }) async {
-    return HttpUtil.getBodyString(
-        get(uri, query: params, headers: headers, contentType: contentType));
+    return getBodyString(get(uri, query: params, headers: headers, contentType: contentType));
   }
 
   ///to send a POST request
@@ -125,8 +131,7 @@ class HttpClient extends GetConnect {
     Map<String, String>? headers,
     String? contentType,
   }) async {
-    return HttpUtil.getBodyString(
-        post(uri, body, query: query, headers: headers, contentType: contentType));
+    return getBodyString(post(uri, body, query: query, headers: headers, contentType: contentType));
   }
 
   ///to send a PUT request
@@ -143,8 +148,7 @@ class HttpClient extends GetConnect {
     Map<String, String>? headers,
     String? contentType,
   }) async {
-    return HttpUtil.getBodyString(
-        put(uri, body, query: query, headers: headers, contentType: contentType));
+    return getBodyString(put(uri, body, query: query, headers: headers, contentType: contentType));
   }
 
   ///to send a DELETE request
@@ -159,8 +163,7 @@ class HttpClient extends GetConnect {
     Map<String, String>? headers,
     String? contentType,
   }) async {
-    return HttpUtil.getBodyString(
-        delete(uri, query: params, headers: headers, contentType: contentType));
+    return getBodyString(delete(uri, query: params, headers: headers, contentType: contentType));
   }
 
   /// to send a GET request and decode the response
@@ -241,5 +244,21 @@ class HttpClient extends GetConnect {
     String response =
         await toDelete(uri: uri, params: params, headers: headers, contentType: contentType);
     return httpDecoder!.decode<E, F>(response, modelObj: modelObj);
+  }
+
+  ///get the bodyString from the response
+  ///@param response : the response object
+  ///@return : the response body string
+  static Future<String> getBodyString(Future<Response> response) async {
+    return (await response).bodyString!;
+  }
+
+  /// join the http part to a request path
+  /// @param apiPrefix : the apiPrefix on the first assign the function part
+  /// @param requestPath : the request path assign the single function
+  /// @param isAnonymous : whether the request path is anonymous
+  /// @return : the joined request path
+  static String join(String apiPrefix, String requestPath, {bool isAnonymous = false}) {
+    return "/${isAnonymous ? HttpConfiguration.instance.anonymousPrefix : HttpConfiguration.instance.identityPrefix}/$apiPrefix/$requestPath";
   }
 }

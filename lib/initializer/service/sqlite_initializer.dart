@@ -7,15 +7,14 @@ import '../../system/yaml/yaml_configuration.dart';
 import '../../system/yaml/yaml_parser.dart';
 import '../../util/cache_util.dart';
 import '../../util/sqlite/custom_database.dart';
+import '../initializer_enhance.dart';
 
 ///it's the initializer which is used to initialize the sqlite database
-class SqliteInitializer extends Initializer {
+class SqliteInitializer extends Initializer with InitializerEnhance {
   @override
   Future<void> init(BuildContext context) async {
-    // get the configuration
-    YamlConfiguration configuration = CacheUtil.get("_GlobalConfiguration");
     // if we active the sqlite environment
-    if (configuration["sqlite"] != null && (configuration["sqlite.status"] ?? true)) {
+    if (openConfiguration("sqlite.status")) {
       //parse the sqlite table yaml
       YamlConfiguration sqliteConfiguration = await YamlParser.parse("resource/sqlite_table.yaml");
       // store the sqlite table configuration into the global cache

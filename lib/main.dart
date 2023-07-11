@@ -8,7 +8,7 @@ import '../configuration/initializer_configuration.dart';
 import '../configuration/language_configuration.dart';
 import '../configuration/route_configuration.dart';
 import '../util/color/color_util.dart';
-import 'configuration/flutter_screenutil_configuration.dart';
+import 'configuration/auto_configuration/flutter_screenutil_configuration.dart';
 import 'system/yaml/yaml_parser.dart';
 import 'util/cache_util.dart';
 

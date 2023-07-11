@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'package:skye_utils/util/asset_util.dart';
 import 'package:yaml/yaml.dart';
 
 import 'yaml_configuration.dart';
@@ -10,7 +10,7 @@ class YamlParser {
   /// @return : the  future includes the parsed configuration
   static Future<YamlConfiguration> parse(String filePath) async {
     // parse the yaml file
-    String configurationStr = await rootBundle.loadString(filePath);
+    String configurationStr = await AssetUtil.readDataFile(filePath);
     // put the configuration instance into global mao
     return Future.value(YamlConfiguration(loadYaml(configurationStr)));
   }

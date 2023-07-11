@@ -3,18 +3,15 @@ import 'package:get/get.dart';
 
 import '../../configuration/auto_configuration/http_configuration.dart';
 import '../../initializer/initializer.dart';
-import '../../system/yaml/yaml_configuration.dart';
-import '../../util/cache_util.dart';
 import '../../util/http/http_client.dart';
+import '../initializer_enhance.dart';
 
 ///it's the initializer which is used to initialize the http client
-class HttpInitializer extends Initializer {
+class HttpInitializer extends Initializer with InitializerEnhance {
   @override
   void init(BuildContext context) {
-    // judge whether open the http configuration
-    YamlConfiguration globalConfiguration = CacheUtil.get("_GlobalConfiguration");
     // if the http configuration exist and the status is true , we will initialize the http
-    if (globalConfiguration["http"] != null && (globalConfiguration["http.status"] ?? true)) {
+    if (openConfiguration("http.status")) {
       // get the instance
       HttpConfiguration instance = HttpConfiguration.getInstance();
       //create the http client and init it
