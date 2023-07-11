@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/system/yaml_configuration/yaml_parser.dart';
+import '../../system/yaml_configuration/yaml_parser.dart';
 import '../../system/yaml_configuration/YamlConfiguration.dart';
 import '../../util/cache_util.dart';
 import '../../configuration/sqlite_configuration.dart';

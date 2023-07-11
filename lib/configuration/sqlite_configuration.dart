@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/sqlite/sqlite_util.dart';
+import '../util/sqlite/sqlite_util.dart';
 import 'package:yaml/yaml.dart';
 
 import '../system/yaml_configuration/YamlConfiguration.dart';
