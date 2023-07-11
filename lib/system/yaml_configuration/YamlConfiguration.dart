@@ -1,16 +1,16 @@
 import 'package:yaml/yaml.dart';
 
 /// the global Configuration which includes all configurations which is defined in the yaml file
-class GlobalConfiguration {
+class YamlConfiguration {
   // the parsed configuration bean
   late YamlMap globalYamlConfiguration;
 
   // the constructor function
-  GlobalConfiguration(this.globalYamlConfiguration);
+  YamlConfiguration(this.globalYamlConfiguration);
 }
 
 /// the extension class which is used to get the str straightly
-extension GlobalConfigurationExtension on GlobalConfiguration {
+extension GlobalConfigurationExtension on YamlConfiguration {
   /// overloading the []
   dynamic operator [](String key) {
     List<String> keys = key.split(".");

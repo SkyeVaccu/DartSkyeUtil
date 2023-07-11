@@ -1,4 +1,4 @@
-import '../system/yaml_configuration/GlobalConfiguration.dart';
+import '../system/yaml_configuration/YamlConfiguration.dart';
 
 import '../util/cache_util.dart';
 
@@ -18,7 +18,7 @@ class HttpConfiguration {
   }
 
   HttpConfiguration._() {
-    GlobalConfiguration configuration = CacheUtil.get("GlobalConfiguration");
+    YamlConfiguration configuration = CacheUtil.get("GlobalConfiguration");
     //the prefix which in the front of the anonymous request path
     anonymousPrefix = configuration["http.anonymousPrefix"] ?? "annoy";
     //the prefix which in the front of the identity request path

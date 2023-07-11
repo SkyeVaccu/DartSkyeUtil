@@ -1,4 +1,4 @@
-import '../system/yaml_configuration/GlobalConfiguration.dart';
+import '../system/yaml_configuration/YamlConfiguration.dart';
 import '../util/cache_util.dart';
 
 import '../util/object_util.dart';
@@ -18,7 +18,7 @@ class WebSocketConfiguration {
   }
 
   WebSocketConfiguration._() {
-    GlobalConfiguration configuration = CacheUtil.get("_GlobalConfiguration");
+    YamlConfiguration configuration = CacheUtil.get("_GlobalConfiguration");
     String? prefix = configuration["identityPrefix"];
     heartBeatPeriod = configuration['heartBeatPeriod'] ?? 15;
     _Profile currentProfile = () {

@@ -1,3 +1,8 @@
+sqlite:
+  status: true
+  databaseName: test_database
+  identitySign: loginUserId
+  identitySignType: TEXT
 http:
   status: true
   activeProfile: mock

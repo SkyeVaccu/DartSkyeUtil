@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:skye_utils/system/yaml_configuration/GlobalConfiguration.dart';
+import 'package:skye_utils/system/yaml_configuration/YamlConfiguration.dart';
 import '../../util/cache_util.dart';
 import 'package:yaml/yaml.dart';
 import '../../configuration/http_configuration.dart';
@@ -12,7 +12,7 @@ class HttpInitializer extends Initializer {
   @override
   void init(BuildContext context) {
     // judge whether open the http configuration
-    GlobalConfiguration globalConfiguration = CacheUtil.get("_GlobalConfiguration");
+    YamlConfiguration globalConfiguration = CacheUtil.get("_GlobalConfiguration");
     // if the http configuration exist and the status is true , we will initialize the http
     if (globalConfiguration["http"] != null && (globalConfiguration["http.status"] ?? true)) {
       // get the instance

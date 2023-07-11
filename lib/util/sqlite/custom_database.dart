@@ -13,10 +13,13 @@ import '../../extension/string_extension.dart';
 class CustomDatabase {
   //the data base name
   String databaseName;
+
   //the identity sign which assign the owner like the userId as the foreign key in the normal table
   String identitySign;
+
   //all database tables in the database
   List<DatabaseTable> databaseTableList;
+
   //the true database object
   Database? _database;
 
@@ -52,7 +55,7 @@ class CustomDatabase {
   ///@return : create table SQL
   String _getCreateTableSQL(DatabaseTable databaseTable) {
     //check the primary key column whether it's exist
-    if (databaseTable.dataColumn.containsKey(databaseTable.primaryColumn)) {
+    if (databaseTable.dataColumns.containsKey(databaseTable.primaryColumn)) {
       Log.e("primary key column don't exist");
       throw "primary key column don't exist";
     }
@@ -60,14 +63,14 @@ class CustomDatabase {
     else {
       String createTableSQL = "CREATE TABLE ${databaseTable.tableName}( ";
       int cnt = 0;
-      for (String columnName in databaseTable.dataColumn.keys) {
+      for (String columnName in databaseTable.dataColumns.keys) {
         if (columnName == databaseTable.primaryColumn) {
           createTableSQL +=
-              ("$columnName ${databaseTable.dataColumn[columnName]!.info} PRIMARY KEY");
+              ("$columnName ${databaseTable.dataColumns[columnName]!.info} PRIMARY KEY");
         } else {
-          createTableSQL += ("$columnName ${databaseTable.dataColumn[columnName]!.info}");
+          createTableSQL += ("$columnName ${databaseTable.dataColumns[columnName]!.info}");
         }
-        if (cnt != (databaseTable.dataColumn.length - 1)) {
+        if (cnt != (databaseTable.dataColumns.length - 1)) {
           createTableSQL += ",";
         }
         cnt++;
@@ -108,20 +111,20 @@ class CustomDatabase {
 
   ///find all target obj and you can select based on the ownerId
   ///@param tableName : the target table
-  ///@param ownerId : the row information owner id
+  ///@param loginUserId : the row information owner id
   ///@param targetObj : target object type
   ///@return : the all result object list
   Future<List<E>> findAll<E extends Serializable>({
     required String tableName,
-    String? ownerId,
+    String? loginUserId,
     required E targetObj,
   }) async {
-    if (ObjectUtil.isEmpty(ownerId)) {
+    if (ObjectUtil.isEmpty(loginUserId)) {
       List<Map<String, dynamic>> result = await _database!.query(tableName);
       return SerializeUtil.asCustomized(result, targetObj);
     } else {
       List<Map<String, dynamic>> result = await _database!.query(tableName,
-          columns: [identitySign], where: "$identitySign=?", whereArgs: [ownerId]);
+          columns: [identitySign], where: "$identitySign=?", whereArgs: [loginUserId]);
       return SerializeUtil.asCustomized(result, targetObj);
     }
   }

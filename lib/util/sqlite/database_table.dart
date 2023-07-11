@@ -4,11 +4,13 @@ import '../../util/sqlite/sqlite_data_type.dart';
 class DatabaseTable {
   //the table name
   String tableName;
+
   //the primary key column
   String primaryColumn;
+
   //all data columns
-  Map<String, SqliteDataType> dataColumn;
+  Map<String, SqliteDataType> dataColumns;
 
   ///constructor
-  DatabaseTable(this.tableName, this.primaryColumn, this.dataColumn);
+  DatabaseTable(this.tableName, this.primaryColumn, this.dataColumns);
 }

@@ -1,0 +1,14 @@
+sqlite:
+  - tableName: User
+    primaryColumn: userId
+    columns:
+      - name: userId
+        type: INTEGER
+      - name: username
+        type: TEXT
+  - tableName: book
+    primaryColumn: id
+    loginDifference: true
+    columns:
+      - name: id
+        type: TEXT
