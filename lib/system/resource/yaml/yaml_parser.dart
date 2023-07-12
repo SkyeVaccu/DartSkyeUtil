@@ -1,4 +1,4 @@
-import 'package:skye_utils/util/asset_util.dart';
+import '../../../util/asset_util.dart';
 import 'package:yaml/yaml.dart';
 
 import 'yaml_configuration.dart';
