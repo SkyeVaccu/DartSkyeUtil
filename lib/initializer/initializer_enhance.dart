@@ -9,14 +9,16 @@ mixin InitializerEnhance {
   bool openConfiguration(String key) {
     YamlConfiguration globalConfiguration = CacheUtil.get("_GlobalConfiguration");
     List<String> keys = key.split(".");
+    String currentKey="";
     for (int i = 0; i < keys.length; i++) {
-      String key = keys[i];
+      currentKey += "${keys[i]}";
       if (i != keys.length - 1) {
-        if (globalConfiguration[key] == null) {
+        if (globalConfiguration[currentKey] == null) {
           return false;
-        } else {
-          return globalConfiguration[key] ?? true;
         }
+        currentKey+=".";
+      }else{
+        return globalConfiguration[currentKey] ?? true;
       }
     }
     return false;
