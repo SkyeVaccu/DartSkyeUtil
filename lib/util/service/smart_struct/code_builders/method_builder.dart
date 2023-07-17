@@ -83,10 +83,10 @@ Code _generateBody(Map<String, dynamic> config, MethodElement method, ClassEleme
       }
     }
   }
+
   // final output = Output(positionalArgs, {namedArgs});
-  blockBuilder.addExpression(refer(targetConstructor.displayName)
-      .newInstance(positionalArgs, namedArgs)
-      .assignFinal(targetVarName));
+  blockBuilder.addExpression(declareFinal(targetVarName)
+      .assign(refer(targetConstructor.displayName).newInstance(positionalArgs, namedArgs)));
 
   // non final properties (implicit and explicit setters)
   final fields = _findFields(targetClass);
@@ -186,25 +186,9 @@ List<HashMap<String, SourceAssignment>> _targetToSource(List<ParameterElement> s
           for (var matchedTarget in matchedSourceClazzInSourceMapping.keys) {
             //拿到值列表[user,token]
             final sourceValueList = matchedSourceClazzInSourceMapping[matchedTarget]!;
-            //获得对应的ClassElement
-            final fieldClazz = f.type.element as ClassElement;
             //找到其所有函数
-            final foundFields = _findFields(fieldClazz);
             final refChain = RefChain.byPropNames(sourceValue, sourceValueList.sublist(1));
             targetToSource[matchedTarget] = SourceAssignment.fromRefChain(refChain);
-
-            //   final matchingFieldForSourceValues =
-            //       _findMatchingField(sourceValueList.sublist(1), foundFields);
-            //   if (matchingFieldForSourceValues != null) {
-            //     final sourceRefer = sourceValueList
-            //         .sublist(0, sourceValueList.length - 1)
-            //         .join(".");
-            //     targetToSource[matchedTarget] = SourceAssignment.fromField(
-            //         matchingFieldForSourceValues, sourceRefer);
-            //   } else {
-            //     targetToSource[f.name] =
-            //         SourceAssignment.fromField(f, sourceEntry.value.displayName);
-            //   }
           }
         }
         //没有对应关系，或者f是基本数据类型
@@ -259,23 +243,6 @@ Map<String, MappingConfig> _extractStringMappingConfig(Map<String, MappingConfig
   return mappingStringConfig;
 }
 
-/// Searches for a matching class for every given [MappingConfig] in [mappingStringConfig], matched against the given [matchingSourceClazzName]
-/// For MappingConfigs including dot seperated clazz attributes, the first value before the first dot is matched against the given matchingSourceClazzName.
-/// Example: A MappingConfig containing "user.address.zipcode" would try to match against user
-List<List<String>> _findMatchingSourceClazzInMapping(
-    Map<String, MappingConfig> mappingStringConfig, String matchingSourceClazzName) {
-  List<List<String>> matchedSourceClazzInSourceMapping = [];
-  mappingStringConfig.forEach((key, value) {
-    // clazz.attribute1.attribute1_1
-    final sourceValueList = value.source!.toStringValue()!.split(".");
-    final sourceClass = sourceValueList[0];
-    if (sourceClass == matchingSourceClazzName) {
-      matchedSourceClazzInSourceMapping.add(sourceValueList);
-    }
-  });
-  return matchedSourceClazzInSourceMapping;
-}
-
 Map<String, List<String>> _findMatchingSourceClazzInMappingMap(
     Map<String, MappingConfig> mappingStringConfig, String matchingSourceClazzName) {
   Map<String, List<String>> ret = {};
@@ -288,28 +255,6 @@ Map<String, List<String>> _findMatchingSourceClazzInMappingMap(
     }
   });
   return ret;
-}
-
-/// Finds the matching field, matching the last source of [sources] to any field of [fields]
-/// If no field was found, null is returned
-///
-/// Example: [sources]="user,address,zipcode" with [fields]=address would identify address as a field, then continue searching in the address field for the zipcode field.
-/// If the address contains a field zipcode, the zipcode field is returned.
-FieldElement? _findMatchingField(List<String> sources, List<FieldElement> fields) {
-  for (var source in sources) {
-    final potentielFinds = fields.where((element) => element.name == source);
-    if (potentielFinds.isEmpty) {
-      continue;
-    }
-    final foundField = potentielFinds.first;
-    // foundField is not string
-    if (_shouldSearchMoreFields(foundField)) {
-      final searchClazz = foundField.type.element as ClassElement;
-      return _findMatchingField(sources.skip(1).toList(), _findFields(searchClazz));
-    } else {
-      return foundField;
-    }
-  }
 }
 
 /// A search for a potential underlying should only be continued, if the field is not a primitive type (string, int, double etc)
