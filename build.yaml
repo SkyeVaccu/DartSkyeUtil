@@ -1,0 +1,22 @@
+builders:
+  mapper:
+    # must
+    import: "package:skye_utils/util/service/smart_struct/builder.dart"
+    builder_factories: ["smartStructBuilder"]
+    build_extensions: { ".dart": [".g.dart"] }
+    auto_apply: all_packages
+    build_to: source
+    # applies_builders: ["source_gen|combining_builder"]
+    runs_before: ["injectable_generator|injectable_builder"]
+    required_inputs: [".g.dart"]
+
+targets:
+  $default:
+    sources:
+      - lib/**
+    builders:
+      # you should use the project name here
+      skye_utils|mapper:
+        options:
+          # define the file where is created
+          build_extensions: { "lib/store/entity/map_struct/{{}}.dart": "lib/store/entity/map_struct/impl/{{}}.g.dart" }
