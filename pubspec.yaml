@@ -29,13 +29,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
-  # which is used to the smart struct to create the code
   build_runner: ^2.1.7
   freezed: ^1.1.1
   injectable_generator: ^1.5.3
   test: ^1.20.1
   source_gen_test: ^1.0.2
-  # which can be dev dependency
   analyzer: ^3.2.0
   build: ^2.2.1
   code_builder: ^4.1.0

@@ -1,3 +1,4 @@
+///it's the example data transform object
 class UserDTO {
   String? username;
 

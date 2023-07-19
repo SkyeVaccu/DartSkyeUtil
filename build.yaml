@@ -1,19 +1,28 @@
 builders:
   mapper:
-    # must
+    # set the buildr file which will be called
     import: "package:skye_utils/util/service/smart_struct/builder.dart"
+    # define the builder factories name
     builder_factories: ["smartStructBuilder"]
+    # define the file extension reflection
     build_extensions: { ".dart": [".g.dart"] }
+    # scope of the action
     auto_apply: all_packages
+    # the created file store location
     build_to: source
-    # applies_builders: ["source_gen|combining_builder"]
+    # the preceding builder
     runs_before: ["injectable_generator|injectable_builder"]
+    # which file will be handle at last
     required_inputs: [".g.dart"]
 
+# define the target rule
 targets:
+  # the default run rule
   $default:
+    # the apply source directory
     sources:
       - lib/**
+    # the rule of the builder
     builders:
       # you should use the project name here
       skye_utils|mapper:
