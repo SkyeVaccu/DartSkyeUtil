@@ -434,7 +434,7 @@ Color color = ColorUitl.getAdaptColor(AdaptColorType.ThemeColor, reverse = false
 
 ##### 创建一个符合序列规则的类
 该目标类应当继承`EmptySerializable`类，实现相关的抽象接口，如下所示：
-> 考虑到每次实现较为复制，此处提供了一个**Windows**应用，帮助快速生成该文件内容
+> 考虑到每次实现较为复制，此处提供了一个**Windows**应用，帮助快速生成该文件内容，安装包为`to_dart_bean.msix`
 
 ```dart
 class User extends EmptySerializable{
@@ -1053,7 +1053,7 @@ int count = database.rawInsert(sql, ["1", "aa"]);
 
 原生删除
 > 必选参数：
-> * <String> sql: sql语句
+> * <String> sql: sql语句  
 > * <List<Object?>?> arguments: 参数值
 
 ```dart
@@ -1068,7 +1068,43 @@ int count = database.rawDelete(sql, ["1", "aa"]);
 
 如果想要对生成位置等进行修改，需要定制化`build.yaml`文件
 ##### 简单使用
-1. 编写对应的抽象接口
+1. 修改`build.yaml`文件，将部分内容改成自己的包
+```yaml
+builders:
+  mapper:
+    # set the buildr file which will be called
+    # 此处要改成自己的包名
+    import: "package:skye_utils/util/service/smart_struct/builder.dart"
+    # define the builder factories name
+    builder_factories: ["smartStructBuilder"]
+    # define the file extension reflection
+    build_extensions: { ".dart": [".g.dart"] }
+    # scope of the action
+    auto_apply: all_packages
+    # the created file store location
+    build_to: source
+    # the preceding builder
+    runs_before: ["injectable_generator|injectable_builder"]
+    # which file will be handle at last
+    required_inputs: [".g.dart"]
+
+# define the target rule
+targets:
+  # the default run rule
+  $default:
+    # the apply source directory
+    sources:
+      - lib/**
+    # the rule of the builder
+    builders:
+      # you should use the project name here
+      # 此处要改成自己的包名
+      skye_utils|mapper:
+        options:
+          # define the file where is created
+          build_extensions: { "lib/store/entity/map_struct/{{}}.dart": "lib/store/entity/map_struct/impl/{{}}.g.dart" }
+```
+2. 编写对应的抽象接口
 ```dart
 import '../../../util/service/smart_struct/annotations.dart';
 import '../bo/user_bo.dart';
@@ -1086,11 +1122,11 @@ abstract class UserMapper {
 }
 
 ```
-2. 运行对应的命令
+3. 运行对应的命令
 ```sh
 > dart run builde_runner build
 ```
-3. 可以发现在`lib/store/entity/map_struct/impl`下已经生成了对应的转换类
+4. 可以发现在`lib/store/entity/map_struct/impl`下已经生成了对应的转换类
 ```dart
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
